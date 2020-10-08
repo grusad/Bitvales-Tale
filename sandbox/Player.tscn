@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sandbox/BaseCharacter.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://sandbox/Player.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.25098, 0.207843, 0.207843, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.835294, 0.239216, 0.941176, 1 )
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.8
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.338, 0 )
+shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.859308, 0.511458, 0, -0.511458, 0.859308, 0, 8.22554, 9.79156 )

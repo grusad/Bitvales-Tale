@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/grasstile.obj-96a1ca095f3e6b3b06d582be687894e9.mesh"
+
+[deps]
+
+files=[ "res://.import/grasstile.obj-96a1ca095f3e6b3b06d582be687894e9.mesh" ]
+
+source_file="res://sandbox/grasstile.obj"
+dest_files=[ "res://.import/grasstile.obj-96a1ca095f3e6b3b06d582be687894e9.mesh", "res://.import/grasstile.obj-96a1ca095f3e6b3b06d582be687894e9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
