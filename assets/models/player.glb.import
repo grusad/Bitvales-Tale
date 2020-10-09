@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/mannequiny-0.3.0.glb-4834a44dccc5b60a0f0c605cd0a4ff81.scn"
+path="res://.import/player.glb-ae1edf01baaba8d1685741a4f60c906f.scn"
 
 [deps]
 
-source_file="res://sandbox/mannequiny-0.3.0.glb"
-dest_files=[ "res://.import/mannequiny-0.3.0.glb-4834a44dccc5b60a0f0c605cd0a4ff81.scn" ]
+source_file="res://assets/models/player.glb"
+dest_files=[ "res://.import/player.glb-ae1edf01baaba8d1685741a4f60c906f.scn" ]
 
 [params]
 

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Unnamed"
-run/main_scene="res://sandbox/Sandbox.tscn"
+run/main_scene="res://src/TestWorld.tscn"
 config/icon="res://icon.png"
 
 [rendering]
