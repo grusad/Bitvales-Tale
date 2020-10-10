@@ -45,6 +45,6 @@ func _physics_process(delta):
 	
 	#lerp animations
 	var speed = horizontal_velocity.length() / MAX_MOVEMENT_SPEED
-	animation_tree["parameters/idle_move/blend_amount"] = speed
+	animation_tree["parameters/idle_run/blend_amount"] = speed
 
 	
