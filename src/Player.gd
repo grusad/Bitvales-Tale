@@ -20,6 +20,8 @@ func _physics_process(delta):
 		move_dir.x = -1
 	if Input.is_action_pressed("ui_right"):
 		move_dir.x = 1
+	if Input.is_action_just_pressed("default_attack"):
+		animation_tree["parameters/punch/active"] = true
 		
 	move_dir = move_dir.normalized()
 	
@@ -35,7 +37,7 @@ func _physics_process(delta):
 	
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
-	
+	velocity.y = 0;
 	velocity = move_and_slide(velocity)
 	
 	#lerp animations
