@@ -1,12 +1,17 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://assets/models/Face.material" type="Material" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "Skin"
 params_cull_mode = 2
 albedo_color = Color( 0.811765, 0.419608, 0.419608, 1 )
+metallic = 1.0
+
+[sub_resource type="SpatialMaterial" id=19]
+resource_name = "Face"
+params_cull_mode = 2
+albedo_color = Color( 0.819608, 0.968627, 0.960784, 1 )
 metallic = 1.0
 
 [sub_resource type="ArrayMesh" id=2]
@@ -29,7 +34,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 97731,
 "index_count": 960,
-"material": ExtResource( 1 ),
+"material": SubResource( 19 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.368757, 2.47045, 0.385301, 0.737513, 0.287687, 0.116211 ) ],
 "vertex_count": 168
