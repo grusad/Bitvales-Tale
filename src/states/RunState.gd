@@ -18,6 +18,8 @@ func physics_process(delta):
 	var movement_direction : Vector3 = parent.get_input_direction()
 	if movement_direction.length() == 0:
 		transition_to(parent.get_state("IdleState"))
+	elif Input.is_action_pressed("roll"):
+		transition_to(parent.get_state("RollState"))
 	elif Input.is_action_pressed("walk"):
 		transition_to(parent.get_state("WalkState"))
 	else:

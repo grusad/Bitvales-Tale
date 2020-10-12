@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/models/player/Hair.material" type="Material" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/states/IdleState.gd" type="Script" id=9]
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=10]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=11]
+[ext_resource path="res://src/states/RollState.gd" type="Script" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Body"
@@ -1480,6 +1481,20 @@ tracks/22/loop_wrap = true
 tracks/22/imported = true
 tracks/22/enabled = true
 tracks/22/keys = PoolRealArray( 0, 1, 0, 0, 0, -3.55271e-15, 0, 0, 1, 1, 1, 1, 0.916667, 1, 0, 0, 0, -3.55271e-15, 0, 0, 1, 1, 1, 1 )
+tracks/23/type = "method"
+tracks/23/path = NodePath("States/RollState")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "roll_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Run"
@@ -2821,3 +2836,4 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="RollState" type="Node" parent="States"]
+script = ExtResource( 12 )
