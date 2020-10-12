@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/models/player/Hair.material" type="Material" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/models/player/Skin.material" type="Material" id=5]
 [ext_resource path="res://assets/models/player/Pants.material" type="Material" id=6]
 [ext_resource path="res://assets/models/player/Shirt.material" type="Material" id=7]
+[ext_resource path="res://temp_anim_tree.tres" type="AnimationNodeBlendTree" id=8]
+[ext_resource path="res://src/states/IdleState.gd" type="Script" id=9]
+[ext_resource path="res://src/states/WalkState.gd" type="Script" id=10]
+[ext_resource path="res://src/states/RunState.gd" type="Script" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Body"
@@ -2638,52 +2642,6 @@ tracks/22/keys = PoolRealArray( 0, 1, 0, 0, 0, -3.55271e-15, 0, 0, 1, 1, 1, 1, 1
 radius = 0.7
 height = 3.0
 
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "Run"
-
-[sub_resource type="AnimationNodeAnimation" id=20]
-animation = "Punch"
-
-[sub_resource type="AnimationNodeAnimation" id=21]
-animation = "Roll"
-
-[sub_resource type="AnimationNodeAnimation" id=22]
-animation = "Idle"
-
-[sub_resource type="AnimationNodeTimeScale" id=23]
-
-[sub_resource type="AnimationNodeTimeScale" id=24]
-
-[sub_resource type="AnimationNodeBlend2" id=25]
-
-[sub_resource type="AnimationNodeOneShot" id=26]
-filter_enabled = true
-filters = [ "CharacterArmature/Skeleton:abdomen", "CharacterArmature/Skeleton:fist_l", "CharacterArmature/Skeleton:fist_r", "CharacterArmature/Skeleton:head", "CharacterArmature/Skeleton:hips", "CharacterArmature/Skeleton:lower_arm_l", "CharacterArmature/Skeleton:lower_arm_r", "CharacterArmature/Skeleton:neck", "CharacterArmature/Skeleton:shoulder_l", "CharacterArmature/Skeleton:shoulder_r", "CharacterArmature/Skeleton:torso", "CharacterArmature/Skeleton:upper_arm_l", "CharacterArmature/Skeleton:upper_arm_r" ]
-
-[sub_resource type="AnimationNodeOneShot" id=27]
-
-[sub_resource type="AnimationNodeBlendTree" id=28]
-nodes/Animation/node = SubResource( 22 )
-nodes/Animation/position = Vector2( 220, 120 )
-"nodes/Animation 2/node" = SubResource( 19 )
-"nodes/Animation 2/position" = Vector2( 180, 380 )
-"nodes/Animation 3/node" = SubResource( 20 )
-"nodes/Animation 3/position" = Vector2( 740, 440 )
-"nodes/Animation 4/node" = SubResource( 21 )
-"nodes/Animation 4/position" = Vector2( 960, 480 )
-nodes/TimeScale/node = SubResource( 24 )
-nodes/TimeScale/position = Vector2( 435, 435 )
-"nodes/TimeScale 2/node" = SubResource( 23 )
-"nodes/TimeScale 2/position" = Vector2( 1160, 440 )
-nodes/idle_run/node = SubResource( 25 )
-nodes/idle_run/position = Vector2( 600, 200 )
-nodes/output/position = Vector2( 1640, 140 )
-nodes/punch_attack/node = SubResource( 26 )
-nodes/punch_attack/position = Vector2( 1020, 220 )
-nodes/roll/node = SubResource( 27 )
-nodes/roll/position = Vector2( 1320, 180 )
-node_connections = [ "output", 0, "roll", "idle_run", 0, "Animation", "idle_run", 1, "TimeScale", "TimeScale 2", 0, "Animation 4", "roll", 0, "punch_attack", "roll", 1, "TimeScale 2", "punch_attack", 0, "idle_run", "punch_attack", 1, "Animation 3", "TimeScale", 0, "Animation 2" ]
-
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 2 )
 
@@ -2839,11 +2797,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 shape = SubResource( 18 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 28 )
+tree_root = ExtResource( 8 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/OneShot/active = false
 parameters/TimeScale/scale = 2.0
-"parameters/TimeScale 2/scale" = 2.0
-parameters/idle_run/blend_amount = 0
+"parameters/TimeScale 2/scale" = 3.0
+"parameters/TimeScale 3/scale" = 2.0
+"parameters/TimeScale 4/scale" = 3.0
+parameters/movement/current = 1
 parameters/punch_attack/active = false
 parameters/roll/active = false
+
+[node name="States" type="Node" parent="."]
+
+[node name="IdleState" type="Node" parent="States"]
+script = ExtResource( 9 )
+
+[node name="WalkState" type="Node" parent="States"]
+script = ExtResource( 10 )
+
+[node name="RunState" type="Node" parent="States"]
+script = ExtResource( 11 )
+
+[node name="RollState" type="Node" parent="States"]

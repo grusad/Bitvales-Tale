@@ -1,50 +1,44 @@
 extends KinematicBody
+class_name Player
+
+onready var animation_tree = $AnimationTree
 
 const ACCELERATION = 10.0
 const DEACCELERATION = 15.0
 const MAX_MOVEMENT_SPEED = 15
 
-onready var animation_tree = $AnimationTree
-
 var velocity = Vector3()
-var rolling = false
+var state = null
+
+func _ready():
+	state = get_state("IdleState")
+	state.enter_state(self)
+	
 
 func _physics_process(delta):
-	
-	var move_dir = Vector3()
-	
-	if Input.is_action_pressed("ui_up"):
-		move_dir.z = -1
-	if Input.is_action_pressed("ui_down"):
-		move_dir.z = 1
-	if Input.is_action_pressed("ui_left"):
-		move_dir.x = -1
-	if Input.is_action_pressed("ui_right"):
-		move_dir.x = 1
-	if Input.is_action_just_pressed("default_attack"):
-		animation_tree["parameters/punch_attack/active"] = true
-	if Input.is_action_just_pressed("roll"):
-		animation_tree["parameters/roll/active"] = true
-		
-	move_dir = move_dir.normalized()
-	
-	if move_dir.length() > 0:
-		look_at(global_transform.origin + move_dir * -1, Vector3.UP)
-	
+	state.physics_process(delta)
+	state.process_unhandled_input(delta)
+
+func apply_movement(movement_direction, acceleration, max_speed, delta):
 	var horizontal_velocity = velocity
 	horizontal_velocity.y = 0
-	var new_position = move_dir * MAX_MOVEMENT_SPEED
-	var acceleration = DEACCELERATION
-	
+	var new_position = movement_direction * max_speed
 	horizontal_velocity = horizontal_velocity.linear_interpolate(new_position, acceleration * delta)
-	
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
-	velocity.y = 0;
+	velocity.y = 0
 	velocity = move_and_slide(velocity)
 	
-	#lerp animations
-	var speed = horizontal_velocity.length() / MAX_MOVEMENT_SPEED
-	animation_tree["parameters/idle_run/blend_amount"] = speed
-
+func get_input_direction():
+	return Vector3(
+			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+			0,
+			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		).normalized()
+		
+func set_state(new_state):
+	state = new_state
+	
+func get_state(state_name):
+	return get_node("States/" + state_name)
 	

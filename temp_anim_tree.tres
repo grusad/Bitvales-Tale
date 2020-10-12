@@ -1,0 +1,78 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=15 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Run"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Punch"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Roll"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "SwordSlash"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeOneShot" id=7]
+
+[sub_resource type="AnimationNodeTimeScale" id=8]
+
+[sub_resource type="AnimationNodeTimeScale" id=9]
+
+[sub_resource type="AnimationNodeTimeScale" id=10]
+
+[sub_resource type="AnimationNodeTimeScale" id=11]
+
+[sub_resource type="AnimationNodeTransition" id=12]
+input_count = 3
+xfade_time = 0.25
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_1/name = "Walk"
+input_1/auto_advance = false
+input_2/name = "Run"
+input_2/auto_advance = false
+
+[sub_resource type="AnimationNodeOneShot" id=13]
+filter_enabled = true
+filters = [ "CharacterArmature/Skeleton:abdomen", "CharacterArmature/Skeleton:fist_l", "CharacterArmature/Skeleton:fist_r", "CharacterArmature/Skeleton:head", "CharacterArmature/Skeleton:hips", "CharacterArmature/Skeleton:lower_arm_l", "CharacterArmature/Skeleton:lower_arm_r", "CharacterArmature/Skeleton:neck", "CharacterArmature/Skeleton:shoulder_l", "CharacterArmature/Skeleton:shoulder_r", "CharacterArmature/Skeleton:torso", "CharacterArmature/Skeleton:upper_arm_l", "CharacterArmature/Skeleton:upper_arm_r" ]
+
+[sub_resource type="AnimationNodeOneShot" id=14]
+
+[resource]
+graph_offset = Vector2( 194, -206 )
+nodes/Animation/node = SubResource( 6 )
+nodes/Animation/position = Vector2( 220, 120 )
+"nodes/Animation 2/node" = SubResource( 1 )
+"nodes/Animation 2/position" = Vector2( 200, 420 )
+"nodes/Animation 3/node" = SubResource( 2 )
+"nodes/Animation 3/position" = Vector2( 740, 440 )
+"nodes/Animation 4/node" = SubResource( 3 )
+"nodes/Animation 4/position" = Vector2( 920, 600 )
+"nodes/Animation 5/node" = SubResource( 4 )
+"nodes/Animation 5/position" = Vector2( 1320, 600 )
+"nodes/Animation 6/node" = SubResource( 5 )
+"nodes/Animation 6/position" = Vector2( 220, 260 )
+nodes/OneShot/node = SubResource( 7 )
+nodes/OneShot/position = Vector2( 1640, 220 )
+nodes/TimeScale/node = SubResource( 11 )
+nodes/TimeScale/position = Vector2( 420, 400 )
+"nodes/TimeScale 2/node" = SubResource( 8 )
+"nodes/TimeScale 2/position" = Vector2( 1120, 460 )
+"nodes/TimeScale 3/node" = SubResource( 9 )
+"nodes/TimeScale 3/position" = Vector2( 420, 260 )
+"nodes/TimeScale 4/node" = SubResource( 10 )
+"nodes/TimeScale 4/position" = Vector2( 1460, 460 )
+nodes/movement/node = SubResource( 12 )
+nodes/movement/position = Vector2( 640, 180 )
+nodes/output/position = Vector2( 1960, 220 )
+nodes/punch_attack/node = SubResource( 13 )
+nodes/punch_attack/position = Vector2( 1000, 200 )
+nodes/roll/node = SubResource( 14 )
+nodes/roll/position = Vector2( 1300, 220 )
+node_connections = [ "output", 0, "OneShot", "OneShot", 0, "roll", "OneShot", 1, "TimeScale 4", "TimeScale", 0, "Animation 2", "TimeScale 2", 0, "Animation 4", "TimeScale 3", 0, "Animation 6", "TimeScale 4", 0, "Animation 5", "movement", 0, "Animation", "movement", 1, "TimeScale 3", "movement", 2, "TimeScale", "punch_attack", 0, "movement", "punch_attack", 1, "Animation 3", "roll", 0, "punch_attack", "roll", 1, "TimeScale 2" ]
