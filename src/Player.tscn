@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/models/player/Hair.material" type="Material" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=10]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=11]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=12]
+[ext_resource path="res://src/states/DefaultAttackState.gd" type="Script" id=13]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Body"
@@ -2156,6 +2157,20 @@ tracks/22/loop_wrap = true
 tracks/22/imported = true
 tracks/22/enabled = true
 tracks/22/keys = PoolRealArray( 0, 1, 0, 0, 0, -3.55271e-15, 0, 0, 1, 1, 1, 1, 1.04167, 1, 0, 0, 0, -3.55271e-15, 0, 0, 1, 1, 1, 1 )
+tracks/23/type = "method"
+tracks/23/path = NodePath("States/DefaultAttackState")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 1.03219 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "default_attack_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "Victory"
@@ -2815,12 +2830,12 @@ shape = SubResource( 18 )
 tree_root = ExtResource( 8 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/OneShot/active = false
 parameters/TimeScale/scale = 2.0
 "parameters/TimeScale 2/scale" = 3.0
 "parameters/TimeScale 3/scale" = 2.0
-"parameters/TimeScale 4/scale" = 3.0
-parameters/movement/current = 1
+"parameters/TimeScale 5/scale" = 2.0
+parameters/default_attack/active = false
+parameters/movement/current = 0
 parameters/punch_attack/active = false
 parameters/roll/active = false
 
@@ -2837,3 +2852,6 @@ script = ExtResource( 11 )
 
 [node name="RollState" type="Node" parent="States"]
 script = ExtResource( 12 )
+
+[node name="DefaultAttackState" type="Node" parent="States"]
+script = ExtResource( 13 )
