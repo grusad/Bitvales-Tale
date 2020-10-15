@@ -1,0 +1,98 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/PlayerSkeleton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/states/States.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Player.gd" type="Script" id=7]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.7
+height = 3.0
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Run"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Roll"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "DefaultAttackStage1"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "DefaultAttackStage2"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "DefaultAttackStage3"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeTimeScale" id=9]
+
+[sub_resource type="AnimationNodeOneShot" id=10]
+
+[sub_resource type="AnimationNodeTransition" id=11]
+input_count = 6
+xfade_time = 0.25
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_1/name = "Walk"
+input_1/auto_advance = false
+input_2/name = "Run"
+input_2/auto_advance = false
+input_3/name = "DefaultAttack01"
+input_3/auto_advance = false
+input_4/name = "DefaultAttack02"
+input_4/auto_advance = false
+input_5/name = "DefaultAttack03"
+input_5/auto_advance = false
+
+[sub_resource type="AnimationNodeBlendTree" id=12]
+graph_offset = Vector2( 53, 14.5 )
+nodes/Animation/node = SubResource( 8 )
+nodes/Animation/position = Vector2( 340, 60 )
+"nodes/Animation 2/node" = SubResource( 2 )
+"nodes/Animation 2/position" = Vector2( 340, 200 )
+"nodes/Animation 3/node" = SubResource( 3 )
+"nodes/Animation 3/position" = Vector2( 340, -100 )
+"nodes/Animation 4/node" = SubResource( 4 )
+"nodes/Animation 4/position" = Vector2( 740, 380 )
+"nodes/Animation 5/node" = SubResource( 5 )
+"nodes/Animation 5/position" = Vector2( 340, 360 )
+"nodes/Animation 6/node" = SubResource( 6 )
+"nodes/Animation 6/position" = Vector2( 345, 551.5 )
+"nodes/Animation 7/node" = SubResource( 7 )
+"nodes/Animation 7/position" = Vector2( 340, 700 )
+nodes/TimeScale/node = SubResource( 9 )
+nodes/TimeScale/position = Vector2( 960, 380 )
+nodes/output/position = Vector2( 1480, 180 )
+nodes/roll/node = SubResource( 10 )
+nodes/roll/position = Vector2( 1160, 140 )
+nodes/state/node = SubResource( 11 )
+nodes/state/position = Vector2( 700, 100 )
+node_connections = [ "output", 0, "roll", "state", 0, "Animation 3", "state", 1, "Animation", "state", 2, "Animation 2", "state", 3, "Animation 5", "state", 4, "Animation 6", "state", 5, "Animation 7", "TimeScale", 0, "Animation 4", "roll", 0, "state", "roll", 1, "TimeScale" ]
+
+[node name="PlayerCharacter" type="KinematicBody"]
+script = ExtResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 12 )
+anim_player = NodePath("../PlayerSkeleton/AnimationPlayer")
+active = true
+parameters/TimeScale/scale = 2.0
+parameters/roll/active = false
+parameters/state/current = 0
+
+[node name="States" parent="." instance=ExtResource( 2 )]
+
+[node name="PlayerSkeleton" parent="." instance=ExtResource( 1 )]
+
+[editable path="States"]
+
+[editable path="PlayerSkeleton"]

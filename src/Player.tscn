@@ -2835,9 +2835,9 @@ parameters/TimeScale/scale = 2.0
 "parameters/TimeScale 3/scale" = 2.0
 "parameters/TimeScale 5/scale" = 2.0
 parameters/default_attack/active = false
-parameters/movement/current = 0
 parameters/punch_attack/active = false
 parameters/roll/active = false
+parameters/state/current = 0
 
 [node name="States" type="Node" parent="."]
 

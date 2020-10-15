@@ -20,7 +20,6 @@ func process_unhandled_input(event):
 func physics_process(delta):
 	parent.apply_movement(movement_direction, ACCELERATION, ROLL_SPEED, delta)
 	
-
 func roll_animation_finished():
 	transition_to(previous_state)
 	

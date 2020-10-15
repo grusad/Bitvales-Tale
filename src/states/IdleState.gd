@@ -6,7 +6,7 @@ const DEACCELERATION = 15
 func enter_state(parent, previous_state):
 	self.parent = parent
 	self.previous_state = previous_state
-	parent.animation_tree["parameters/movement/current"] = 0
+	parent.animation_tree["parameters/state/current"] = 0
 	
 func exit_state():
 	pass
