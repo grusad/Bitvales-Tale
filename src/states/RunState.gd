@@ -21,9 +21,9 @@ func physics_process(delta):
 	else:
 		if Input.is_action_just_pressed("roll"):
 			transition_to(parent.get_state("RollState"))
-		elif Input.is_action_pressed("walk"):
+		if Input.is_action_pressed("walk"):
 			transition_to(parent.get_state("WalkState"))
-		elif Input.is_action_just_pressed("default_attack"):
+		if Input.is_action_just_pressed("default_attack"):
 			transition_to(parent.get_state("DefaultAttackState"))
 		
 		parent.apply_movement(movement_direction, ACCELERATION, WALK_SPEED, delta)

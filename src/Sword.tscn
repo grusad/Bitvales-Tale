@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/models/weapons/Sword.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.454902, 0.364706, 0.211765, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.67451, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.419608, 0.329412, 0.329412, 1 )
+
+[node name="Sword" type="Area"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+material/4 = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]

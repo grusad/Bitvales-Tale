@@ -6,7 +6,6 @@ onready var animation_tree = $AnimationTree
 var velocity = Vector3()
 var states = [] setget push_state
 
-
 func _ready():
 	var initial_state = get_state("IdleState")
 	initial_state.enter_state(self, null)
@@ -35,6 +34,7 @@ func get_input_direction():
 			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		).normalized()
 	
+	
 func get_state(state_name):
 	return get_node("States/" + state_name)
 	
@@ -46,4 +46,5 @@ func push_state(state):
 		return
 	states.push_back(state)
 	
-
+func rotate_towards_direction(direction):
+	look_at(global_transform.origin - direction, Vector3.UP)
