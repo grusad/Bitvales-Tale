@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/states/IdleState.gd" type="Script" id=1]
 [ext_resource path="res://src/states/DefaultAttackState.gd" type="Script" id=2]
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=3]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=4]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=5]
+[ext_resource path="res://src/states/StateMachine.gd" type="Script" id=6]
 
-[node name="States" type="Node"]
+[node name="StateMachine" type="Node"]
+script = ExtResource( 6 )
 
 [node name="IdleState" type="Node" parent="."]
 script = ExtResource( 1 )

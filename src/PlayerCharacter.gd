@@ -1,5 +1,4 @@
 extends KinematicBody
-class_name Player
 
 onready var animation_tree = $AnimationTree
 
@@ -10,12 +9,20 @@ func _ready():
 	var initial_state = get_state("IdleState")
 	initial_state.enter_state(self, null)
 	states.push_back(initial_state)
-	
 
 func _physics_process(delta):
+	
 	for state in states:
 		state.physics_process(delta)
 		state.process_unhandled_input(delta)
+
+func get_input_direction():
+	return Vector3(
+			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+			0,
+			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		).normalized()
+
 
 func apply_movement(movement_direction, acceleration, max_speed, delta):
 	var horizontal_velocity = velocity
@@ -27,16 +34,10 @@ func apply_movement(movement_direction, acceleration, max_speed, delta):
 	velocity.y = 0
 	velocity = move_and_slide(velocity)
 	
-func get_input_direction():
-	return Vector3(
-			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-			0,
-			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-		).normalized()
-	
 	
 func get_state(state_name):
 	return get_node("States/" + state_name)
+
 	
 func has_state(state):
 	return true if states.has(state) else false
@@ -47,4 +48,6 @@ func push_state(state):
 	states.push_back(state)
 	
 func rotate_towards_direction(direction):
+	if direction == Vector3.ZERO:
+		return
 	look_at(global_transform.origin - direction, Vector3.UP)

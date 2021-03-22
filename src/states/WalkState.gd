@@ -1,7 +1,7 @@
 extends State
 
 const ACCELERATION = 10
-const WALK_SPEED = 10
+const WALK_SPEED = 6
 
 
 func enter_state(parent, previous_state):
