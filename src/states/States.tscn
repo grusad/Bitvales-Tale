@@ -5,10 +5,11 @@
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=3]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=4]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=5]
-[ext_resource path="res://src/states/StateMachine.gd" type="Script" id=6]
+
+[sub_resource type="GDScript" id=1]
 
 [node name="StateMachine" type="Node"]
-script = ExtResource( 6 )
+script = SubResource( 1 )
 
 [node name="IdleState" type="Node" parent="."]
 script = ExtResource( 1 )

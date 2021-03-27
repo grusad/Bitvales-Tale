@@ -1,11 +1,15 @@
 extends Node
 class_name State
 
-var parent = null
+var parent : KinematicEntity = null
 var previous_state = null
+var parameters = {}
 
-func enter_state(parent, previous_state):
-	pass
+func enter_state(parent, previous_state, parameters = {}):
+	self.parent = parent
+	self.previous_state = previous_state
+	self.parameters = parameters
+
 	
 func exit_state():
 	pass
@@ -19,11 +23,8 @@ func physics_process(delta):
 func transition_to(new_state):
 	exit_state()
 	new_state.enter_state(parent, self)
-	parent.states.erase(self)
+	parent.remove_state(self)
 	parent.push_state(new_state)
 
-# can combine states to be processed paralell
-func combine_with(new_state):
-	new_state.enter_state(parent, self)
-	parent.push_state(new_state)
-
+func post_add_event():
+	pass

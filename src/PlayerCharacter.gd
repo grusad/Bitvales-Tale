@@ -1,53 +1,26 @@
-extends KinematicBody
+extends KinematicEntity
 
 onready var animation_tree = $AnimationTree
+onready var state_nodes = $States
+onready var hand = $PlayerSkeleton/CharacterArmature/Skeleton/Hand
 
-var velocity = Vector3()
-var states = [] setget push_state
 
 func _ready():
 	var initial_state = get_state("IdleState")
 	initial_state.enter_state(self, null)
-	states.push_back(initial_state)
+	push_state(initial_state)
 
-func _physics_process(delta):
 	
-	for state in states:
-		state.physics_process(delta)
-		state.process_unhandled_input(delta)
-
 func get_input_direction():
+	
 	return Vector3(
 			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 			0,
 			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		).normalized()
+		
+func get_hand():
+	return get_node("PlayerSkeleton/CharacterArmature/Skeleton/Hand")
+		
+ 
 
-
-func apply_movement(movement_direction, acceleration, max_speed, delta):
-	var horizontal_velocity = velocity
-	horizontal_velocity.y = 0
-	var new_position = movement_direction * max_speed
-	horizontal_velocity = horizontal_velocity.linear_interpolate(new_position, acceleration * delta)
-	velocity.x = horizontal_velocity.x
-	velocity.z = horizontal_velocity.z
-	velocity.y = 0
-	velocity = move_and_slide(velocity)
-	
-	
-func get_state(state_name):
-	return get_node("States/" + state_name)
-
-	
-func has_state(state):
-	return true if states.has(state) else false
-	
-func push_state(state):
-	if has_state(state):
-		return
-	states.push_back(state)
-	
-func rotate_towards_direction(direction):
-	if direction == Vector3.ZERO:
-		return
-	look_at(global_transform.origin - direction, Vector3.UP)

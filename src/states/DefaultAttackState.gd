@@ -7,34 +7,30 @@ var current_animation_state
 var can_advance_animations = false
 var apply_movement = true
 
-func enter_state(parent, previous_state):
-	self.parent = parent
-	self.previous_state = previous_state
-	self. current_animation_state = 3
-	
+func enter_state(parent, previous_state, parameters = {}):
+	.enter_state(parent, previous_state, parameters)
+	self.current_animation_state = 3
+
 	parent.animation_tree["parameters/state/current"] = current_animation_state
 	apply_movement = true
-	
-func exit_state():
-	pass
 
-func process_unhandled_input(event):
-	pass
+func exit_state():
+	parent.get_hand().disable_melee_weapon()
 	
 func physics_process(delta):
 	var current_direction = parent.get_input_direction()
 	if can_advance_animations:
-			
-		if Input.is_action_just_pressed("default_attack"):
-			parent.rotate_towards_direction(current_direction)
+		if Input.is_action_pressed("default_attack"):
 			parent.animation_tree["parameters/state/current"] = current_animation_state
 			can_advance_animations = false
-			apply_movement = true
-		
-	if apply_movement:
-		parent.apply_movement(current_direction, ACCELERATION, MAX_SPEED, delta)
+	parent.rotate_towards_direction(current_direction)
+	parent.apply_movement(current_direction, ACCELERATION, MAX_SPEED, delta)
+	
 	if Input.is_action_just_pressed("roll"):
 		transition_to(parent.get_state("RollState"))
+		
+	if Input.is_action_just_released("default_attack"):
+		transition_to(parent.get_state("IdleState"))
 		
 func default_attack_finished():
 	current_animation_state = 3

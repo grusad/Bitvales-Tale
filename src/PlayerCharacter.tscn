@@ -1,13 +1,14 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/PlayerSkeleton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=2]
-[ext_resource path="res://src/Sword.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/items/weapons/melee_weapons/IronSword.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=4]
 [ext_resource path="res://src/states/IdleState.gd" type="Script" id=5]
 [ext_resource path="res://src/PlayerCharacter.gd" type="Script" id=6]
 [ext_resource path="res://src/states/DefaultAttackState.gd" type="Script" id=7]
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=8]
+[ext_resource path="res://src/Hand.gd" type="Script" id=9]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.7
@@ -65,7 +66,7 @@ input_5/name = "DefaultAttack03"
 input_5/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=17]
-graph_offset = Vector2( -98, 29.5 )
+graph_offset = Vector2( -98, 80 )
 nodes/Animation/node = SubResource( 8 )
 nodes/Animation/position = Vector2( 200, 60 )
 "nodes/Animation 2/node" = SubResource( 2 )
@@ -75,7 +76,7 @@ nodes/Animation/position = Vector2( 200, 60 )
 "nodes/Animation 4/node" = SubResource( 4 )
 "nodes/Animation 4/position" = Vector2( 740, 380 )
 "nodes/Animation 5/node" = SubResource( 5 )
-"nodes/Animation 5/position" = Vector2( 200, 360 )
+"nodes/Animation 5/position" = Vector2( 160, 380 )
 "nodes/Animation 6/node" = SubResource( 6 )
 "nodes/Animation 6/position" = Vector2( 200, 540 )
 "nodes/Animation 7/node" = SubResource( 7 )
@@ -83,7 +84,7 @@ nodes/Animation/position = Vector2( 200, 60 )
 nodes/TimeScale/node = SubResource( 14 )
 nodes/TimeScale/position = Vector2( 960, 380 )
 "nodes/TimeScale 2/node" = SubResource( 9 )
-"nodes/TimeScale 2/position" = Vector2( 480, 360 )
+"nodes/TimeScale 2/position" = Vector2( 420, 380 )
 "nodes/TimeScale 3/node" = SubResource( 10 )
 "nodes/TimeScale 3/position" = Vector2( 480, 540 )
 "nodes/TimeScale 4/node" = SubResource( 11 )
@@ -97,9 +98,11 @@ nodes/roll/node = SubResource( 15 )
 nodes/roll/position = Vector2( 1160, 140 )
 nodes/state/node = SubResource( 16 )
 nodes/state/position = Vector2( 700, 100 )
-node_connections = [ "output", 0, "roll", "state", 0, "Animation 3", "state", 1, "TimeScale 5", "state", 2, "TimeScale 6", "state", 3, "TimeScale 2", "state", 4, "TimeScale 3", "state", 5, "TimeScale 4", "TimeScale 3", 0, "Animation 6", "TimeScale", 0, "Animation 4", "TimeScale 4", 0, "Animation 7", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale 5", 0, "Animation", "TimeScale 2", 0, "Animation 5", "TimeScale 6", 0, "Animation 2" ]
+node_connections = [ "output", 0, "roll", "state", 0, "Animation 3", "state", 1, "TimeScale 5", "state", 2, "TimeScale 6", "state", 3, "TimeScale 2", "state", 4, "TimeScale 3", "state", 5, "TimeScale 4", "TimeScale 4", 0, "Animation 7", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale 6", 0, "Animation 2", "TimeScale 5", 0, "Animation", "TimeScale 2", 0, "Animation 5", "TimeScale", 0, "Animation 4", "TimeScale 3", 0, "Animation 6" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -145,10 +148,11 @@ bones/15/bound_children = [ NodePath("Hand") ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402409, 0.0123397, -0.00751853 )
 
 [node name="Hand" type="BoneAttachment" parent="PlayerSkeleton/CharacterArmature/Skeleton" index="1"]
-transform = Transform( -0.971146, -0.0393959, -0.235208, 0.0116093, -0.992901, 0.118372, -0.238201, 0.112226, 0.964709, -0.509494, 0.902998, 0.0172189 )
+transform = Transform( -0.970446, -0.0397493, -0.23802, 0.0117692, -0.992963, 0.117839, -0.241029, 0.111556, 0.964085, -0.496571, 0.926283, -0.020044 )
 bone_name = "fist_r"
+script = ExtResource( 9 )
 
-[node name="Sword" parent="PlayerSkeleton/CharacterArmature/Skeleton/Hand" instance=ExtResource( 3 )]
-transform = Transform( 0.0719542, -0.386655, 0.919414, 0.981816, 0.189814, 0.00298771, -0.175673, 0.902479, 0.393282, -0.00823742, 0.033114, 0.0470836 )
+[node name="IronSword" parent="PlayerSkeleton/CharacterArmature/Skeleton/Hand" instance=ExtResource( 3 )]
+transform = Transform( 0.00185841, -0.270606, 0.962688, 0.986058, 0.160683, 0.0432634, -0.166395, 0.949186, 0.267132, -0.0156242, -0.00141102, 0.00576103 )
 
 [editable path="PlayerSkeleton"]
