@@ -2,7 +2,6 @@ extends KinematicEntity
 
 onready var animation_tree = $AnimationTree
 onready var state_nodes = $States
-onready var hand = $PlayerSkeleton/CharacterArmature/Skeleton/Hand
 
 
 func _ready():
@@ -20,7 +19,7 @@ func get_input_direction():
 		).normalized()
 		
 func get_hand():
-	return get_node("PlayerSkeleton/CharacterArmature/Skeleton/Hand")
+	return get_node("FemaleRider/Root/Skeleton/Hand")
 		
  
 

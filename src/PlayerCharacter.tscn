@@ -1,12 +1,14 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/entities/characters/FemaleRider.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=2]
+[ext_resource path="res://src/items/weapons/melee_weapons/IronSword.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=4]
 [ext_resource path="res://src/states/IdleState.gd" type="Script" id=5]
 [ext_resource path="res://src/PlayerCharacter.gd" type="Script" id=6]
 [ext_resource path="res://src/states/DefaultAttackState.gd" type="Script" id=7]
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=8]
+[ext_resource path="res://src/Hand.gd" type="Script" id=9]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.7
@@ -18,18 +20,23 @@ animation = "walk"
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "run"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "roll"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "great-sword-slash"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=9]
+[sub_resource type="AnimationNodeTimeScale" id=7]
 
-[sub_resource type="AnimationNodeOneShot" id=8]
+[sub_resource type="AnimationNodeTimeScale" id=8]
 
-[sub_resource type="AnimationNodeTransition" id=5]
-input_count = 3
+[sub_resource type="AnimationNodeOneShot" id=9]
+
+[sub_resource type="AnimationNodeTransition" id=10]
+input_count = 4
 xfade_time = 0.25
 input_0/name = "idle"
 input_0/auto_advance = false
@@ -37,25 +44,31 @@ input_1/name = "walk"
 input_1/auto_advance = false
 input_2/name = "run"
 input_2/auto_advance = false
+input_3/name = "DefaultAttackState"
+input_3/auto_advance = false
 
-[sub_resource type="AnimationNodeBlendTree" id=6]
-graph_offset = Vector2( 132, 87.25 )
-nodes/Animation/node = SubResource( 4 )
+[sub_resource type="AnimationNodeBlendTree" id=11]
+graph_offset = Vector2( 116.235, 364.811 )
+nodes/Animation/node = SubResource( 6 )
 nodes/Animation/position = Vector2( 260, 100 )
 "nodes/Animation 2/node" = SubResource( 2 )
 "nodes/Animation 2/position" = Vector2( 240, 240 )
 "nodes/Animation 3/node" = SubResource( 3 )
-"nodes/Animation 3/position" = Vector2( 227, 452 )
-"nodes/Animation 4/node" = SubResource( 7 )
+"nodes/Animation 3/position" = Vector2( 230, 370 )
+"nodes/Animation 4/node" = SubResource( 4 )
 "nodes/Animation 4/position" = Vector2( 660, 380 )
-nodes/TimeScale/node = SubResource( 9 )
+"nodes/Animation 5/node" = SubResource( 5 )
+"nodes/Animation 5/position" = Vector2( 210, 510 )
+nodes/TimeScale/node = SubResource( 8 )
 nodes/TimeScale/position = Vector2( 880, 240 )
+"nodes/TimeScale 2/node" = SubResource( 7 )
+"nodes/TimeScale 2/position" = Vector2( 450, 430 )
 nodes/output/position = Vector2( 1420, 200 )
-nodes/roll/node = SubResource( 8 )
+nodes/roll/node = SubResource( 9 )
 nodes/roll/position = Vector2( 1080, 80 )
-nodes/state/node = SubResource( 5 )
-nodes/state/position = Vector2( 680, 120 )
-node_connections = [ "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "output", 0, "roll", "TimeScale", 0, "Animation 4", "roll", 0, "state", "roll", 1, "TimeScale" ]
+nodes/state/node = SubResource( 10 )
+nodes/state/position = Vector2( 610, 180 )
+node_connections = [ "output", 0, "roll", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale 2", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale", 0, "Animation 4", "TimeScale 2", 0, "Animation 5" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
 collision_layer = 2
@@ -87,13 +100,25 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.730383, -0.680979, -0.0529963, 0.0018121, 0.0795207, -0.996832, 0.683036, 0.727972, 0.0593145, -0.0560397, -0.0595065, 0.0572336 )
+transform = Transform( 0.732152, -0.678779, -0.0566745, 0.00117043, 0.0844588, -0.996426, 0.68114, 0.729469, 0.0626312, -0.0593184, -0.056302, 0.0663393 )
+
+[node name="Skeleton" parent="FemaleRider/Root" index="0"]
+bones/23/bound_children = [ NodePath("Hand") ]
+
+[node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
+transform = Transform( 0.728238, 0.338869, -0.595682, -0.659346, 0.583488, -0.474136, 0.186904, 0.738045, 0.648349, -0.400882, 0.0308375, -0.864646 )
+bone_name = "Hand_R"
+script = ExtResource( 9 )
+
+[node name="IronSword" parent="FemaleRider/Root/Skeleton/Hand" instance=ExtResource( 3 )]
+transform = Transform( 0.0235488, -0.352764, -0.353558, 0.365374, 0.253483, -0.228578, 0.34051, -0.247596, 0.26972, -0.0118155, -0.0011434, 0.00686678 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 6 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../FemaleRider/AnimationPlayer")
 active = true
 parameters/TimeScale/scale = 2.0
+"parameters/TimeScale 2/scale" = 0.5
 parameters/roll/active = false
 parameters/state/current = 0
 
