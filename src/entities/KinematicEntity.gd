@@ -19,6 +19,9 @@ func apply_force(direction, force):
 	
 func apply_friction(friction, delta):
 	velocity = lerp(velocity, Vector3.ZERO, friction * delta)
+	
+func stop_movement():
+	velocity = Vector3.ZERO
 
 func get_state(state_name):
 	return get_node_or_null("States/" + state_name)

@@ -48,7 +48,7 @@ input_3/name = "DefaultAttackState"
 input_3/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=11]
-graph_offset = Vector2( 116.235, 364.811 )
+graph_offset = Vector2( 116.235, 364.095 )
 nodes/Animation/node = SubResource( 6 )
 nodes/Animation/position = Vector2( 260, 100 )
 "nodes/Animation 2/node" = SubResource( 2 )
@@ -100,13 +100,10 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.732152, -0.678779, -0.0566745, 0.00117043, 0.0844588, -0.996426, 0.68114, 0.729469, 0.0626312, -0.0593184, -0.056302, 0.0663393 )
-
-[node name="Skeleton" parent="FemaleRider/Root" index="0"]
-bones/23/bound_children = [ NodePath("Hand") ]
+transform = Transform( 0.731179, -0.679957, -0.0551062, 0.00212017, 0.0830435, -0.996544, 0.682183, 0.728535, 0.0621612, -0.0575907, -0.0578234, 0.0626326 )
 
 [node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
-transform = Transform( 0.728238, 0.338869, -0.595682, -0.659346, 0.583488, -0.474136, 0.186904, 0.738045, 0.648349, -0.400882, 0.0308375, -0.864646 )
+transform = Transform( 0.720907, 0.289395, -0.629717, -0.649182, 0.600067, -0.467421, 0.242603, 0.745768, 0.620462, -0.412444, 0.0368263, -0.867239 )
 bone_name = "Hand_R"
 script = ExtResource( 9 )
 
@@ -118,7 +115,7 @@ tree_root = SubResource( 11 )
 anim_player = NodePath("../FemaleRider/AnimationPlayer")
 active = true
 parameters/TimeScale/scale = 2.0
-"parameters/TimeScale 2/scale" = 0.5
+"parameters/TimeScale 2/scale" = 1.2
 parameters/roll/active = false
 parameters/state/current = 0
 
