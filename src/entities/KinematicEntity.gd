@@ -47,7 +47,8 @@ func force_set_state(new_state):
 func remove_state(state):
 	states.erase(state)
 	
-	
+func get_faced_direction():
+	return global_transform.basis.z
 	
 func rotate_towards_direction(direction):
 	if direction == Vector3.ZERO:

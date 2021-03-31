@@ -7,7 +7,7 @@ var movement_direction : Vector3
 
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
-	parent.animation_tree["parameters/roll/active"] = true
+	parent.animation_tree["parameters/state/current"] = 4
 	movement_direction = parent.get_input_direction()
 	parent.rotate_towards_direction(movement_direction)
 

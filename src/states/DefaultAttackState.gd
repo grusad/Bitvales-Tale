@@ -18,7 +18,7 @@ func physics_process(delta):
 	current_direction = parent.get_input_direction()
 	parent.rotate_towards_direction(current_direction)
 	if movable:
-		parent.apply_movement(current_direction, ACCELERATION, 4, delta)
+		parent.apply_movement(parent.get_faced_direction(), ACCELERATION, 4, delta)
 	else:
 		parent.stop_movement()
 		
