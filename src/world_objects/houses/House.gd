@@ -1,28 +1,17 @@
 extends Spatial
 
+onready var detectors = $Detectors
+onready var roof = $Roof
+
 func _ready():
-	connect_doors_recursive(self)
-
-func on_door_open(body):
-	if body.is_in_group("Player"):
-		get_node("Roof").visible = false
+	for area in detectors.get_children():
+		area.connect("body_entered", self, "on_body_entered")
+		area.connect("body_exited", self, "on_body_exited")
 		
-func on_door_close(body):
-	print("left")
+func on_body_exited(body):
 	if body.is_in_group("Player"):
-		get_node("Roof").visible = true
-
-
-func connect_doors_recursive(parent):
-	for node in parent.get_children():
-		if node.get_child_count() > 0:
-			if node.is_in_group("Door"):
-				connect_doors(node)
-			connect_doors_recursive(node)
-		else:
-			if node.is_in_group("Door"):
-				connect_doors(node)
-			
-func connect_doors(door):
-	door.connect("open", self, "on_door_open")
-	door.connect("close", self, "on_door_close")
+		roof.cast_shadow = GeometryInstance.SHADOW_CASTING_SETTING_ON
+		
+func on_body_entered(body):
+	if body.is_in_group("Player"):
+		roof.cast_shadow = GeometryInstance.SHADOW_CASTING_SETTING_SHADOWS_ONLY

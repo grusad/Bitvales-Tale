@@ -8,8 +8,8 @@ func _physics_process(delta):
 	for state in states:
 		state.physics_process(delta)
 		state.process_unhandled_input(delta)
-	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	translation.y = 0
 
 func apply_movement(movement_direction, acceleration, max_speed, delta):
 	velocity = lerp(velocity, movement_direction * max_speed, acceleration * delta)

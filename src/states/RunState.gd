@@ -6,8 +6,12 @@ const WALK_SPEED = 15
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
 	parent.animation_tree["parameters/state/current"] = 2
+	parent.collision_shape.translation.z = 0.67
+	parent.collision_shape.rotation_degrees.x = 22
 	
-
+func exit_state():
+	parent.collision_shape.translation.z = 0
+	parent.collision_shape.rotation_degrees.x = 0
 	
 func physics_process(delta):
 	var movement_direction : Vector3 = parent.get_input_direction()

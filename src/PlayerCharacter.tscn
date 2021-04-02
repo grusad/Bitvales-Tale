@@ -63,7 +63,7 @@ nodes/roll/node = SubResource( 9 )
 nodes/roll/position = Vector2( 1080, 80 )
 nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( 680, 120 )
-node_connections = [ "output", 0, "roll", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "TimeScale", 0, "Animation 4", "roll", 0, "state", "roll", 1, "TimeScale" ]
+node_connections = [ "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "output", 0, "roll", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale", 0, "Animation 4" ]
 
 [sub_resource type="AnimationNodeTimeScale" id=12]
 
@@ -84,7 +84,7 @@ input_4/name = "roll"
 input_4/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=15]
-graph_offset = Vector2( 68.235, 25.25 )
+graph_offset = Vector2( 642.105, 265.823 )
 nodes/Animation/node = SubResource( 11 )
 nodes/Animation/position = Vector2( 260, 100 )
 "nodes/Animation 2/node" = SubResource( 2 )
@@ -102,7 +102,7 @@ nodes/TimeScale/position = Vector2( 480, 420 )
 nodes/output/position = Vector2( 1420, 200 )
 nodes/state/node = SubResource( 14 )
 nodes/state/position = Vector2( 860, 280 )
-node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
+node_connections = [ "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "output", 0, "state", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
 collision_layer = 2
@@ -134,10 +134,10 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.730664, -0.680701, -0.0526887, 0.00229388, 0.07962, -0.996823, 0.682733, 0.728222, 0.0597369, -0.0564111, -0.0593843, 0 )
+transform = Transform( 0.952408, -0.302904, -0.0341691, -0.141551, -0.340205, -0.929636, 0.269966, 0.89023, -0.36689, -0.0371864, -0.0790147, 0 )
 
 [node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
-transform = Transform( 0.713263, 0.306792, -0.630185, -0.657759, 0.603546, -0.450648, 0.242091, 0.735942, 0.632283, -0.415238, 0.0390715, -0.864317 )
+transform = Transform( 0.53642, 0.709302, -0.457323, 0.199982, 0.41962, 0.885396, 0.819915, -0.566401, 0.0832452, -0.0963628, 0.446561, -1.1519 )
 bone_name = "hand_r"
 script = ExtResource( 9 )
 
@@ -153,6 +153,6 @@ parameters/Animation/roll/active = false
 parameters/Animation/state/current = 0
 parameters/TimeScale/scale = 1.5
 "parameters/TimeScale 2/scale" = 2.0
-parameters/state/current = 0
+parameters/state/current = 2
 
 [editable path="FemaleRider"]

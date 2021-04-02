@@ -6,7 +6,7 @@
 [node name="FemaleRider" instance=ExtResource( 1 )]
 
 [node name="Root" parent="." index="0"]
-transform = Transform( 0.970369, -0.238164, 0.0407674, -0.0478911, -0.354944, -0.93366, 0.236835, 0.904042, -0.355833, 0.0343757, -0.0739761, 0 )
+transform = Transform( 0.952408, -0.302904, -0.0341692, -0.141551, -0.340205, -0.929637, 0.269966, 0.89023, -0.36689, -0.0371864, -0.0790147, 0 )
 
 [node name="SK_Chr_Rider_01" parent="Root/Skeleton" index="0"]
 material/0 = ExtResource( 2 )

@@ -2,6 +2,7 @@ extends KinematicEntity
 
 onready var animation_tree = $AnimationTree
 onready var state_nodes = $States
+onready var collision_shape = $CollisionShape
 
 
 func _ready():
