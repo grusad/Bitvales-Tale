@@ -13,7 +13,7 @@ func enter_state(parent, previous_state, parameters = {}):
 
 	
 func physics_process(delta):
-	parent.apply_movement(movement_direction, ACCELERATION, ROLL_SPEED, delta)
+	parent.apply_movement(parent.get_faced_direction(), ACCELERATION, ROLL_SPEED, delta)
 	
 func roll_animation_finished():
 	transition_to(parent.get_state("IdleState"))

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Roof_Thatch_Corner_01.obj-be09f46334269179e63cb41cd1e9eafd.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Roof_Thatch_Corner_01.obj-be09f46334269179e63cb41cd1e9eafd.mesh" ]
+
+source_file="res://assets/models/synys/house/roofs/SM_Bld_House_Roof_Thatch_Corner_01.obj"
+dest_files=[ "res://.import/SM_Bld_House_Roof_Thatch_Corner_01.obj-be09f46334269179e63cb41cd1e9eafd.mesh", "res://.import/SM_Bld_House_Roof_Thatch_Corner_01.obj-be09f46334269179e63cb41cd1e9eafd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

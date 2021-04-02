@@ -20,23 +20,23 @@ animation = "walk"
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "run"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "roll"
-
 [sub_resource type="AnimationNodeAnimation" id=4]
-animation = "great-sword-slash"
+animation = "roll"
 
 [sub_resource type="AnimationNodeAnimation" id=5]
-animation = "roll"
+animation = "great-sword-slash"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
+animation = "roll"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=7]
+[sub_resource type="AnimationNodeTimeScale" id=8]
 
-[sub_resource type="AnimationNodeOneShot" id=8]
+[sub_resource type="AnimationNodeOneShot" id=9]
 
-[sub_resource type="AnimationNodeTransition" id=9]
+[sub_resource type="AnimationNodeTransition" id=10]
 input_count = 3
 xfade_time = 0.25
 input_0/name = "idle"
@@ -46,30 +46,30 @@ input_1/auto_advance = false
 input_2/name = "run"
 input_2/auto_advance = false
 
-[sub_resource type="AnimationNodeBlendTree" id=10]
+[sub_resource type="AnimationNodeBlendTree" id=11]
 graph_offset = Vector2( 132, -319 )
-nodes/Animation/node = SubResource( 6 )
+nodes/Animation/node = SubResource( 7 )
 nodes/Animation/position = Vector2( 260, 100 )
 "nodes/Animation 2/node" = SubResource( 2 )
 "nodes/Animation 2/position" = Vector2( 240, 240 )
 "nodes/Animation 3/node" = SubResource( 3 )
 "nodes/Animation 3/position" = Vector2( 227, 452 )
-"nodes/Animation 4/node" = SubResource( 5 )
+"nodes/Animation 4/node" = SubResource( 6 )
 "nodes/Animation 4/position" = Vector2( 660, 380 )
-nodes/TimeScale/node = SubResource( 7 )
+nodes/TimeScale/node = SubResource( 8 )
 nodes/TimeScale/position = Vector2( 880, 240 )
 nodes/output/position = Vector2( 1420, 200 )
-nodes/roll/node = SubResource( 8 )
+nodes/roll/node = SubResource( 9 )
 nodes/roll/position = Vector2( 1080, 80 )
-nodes/state/node = SubResource( 9 )
+nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( 680, 120 )
-node_connections = [ "output", 0, "roll", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale", 0, "Animation 4" ]
+node_connections = [ "output", 0, "roll", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "TimeScale", 0, "Animation 4", "roll", 0, "state", "roll", 1, "TimeScale" ]
 
-[sub_resource type="AnimationNodeTimeScale" id=15]
+[sub_resource type="AnimationNodeTimeScale" id=12]
 
 [sub_resource type="AnimationNodeTimeScale" id=13]
 
-[sub_resource type="AnimationNodeTransition" id=11]
+[sub_resource type="AnimationNodeTransition" id=14]
 input_count = 5
 xfade_time = 0.25
 input_0/name = "idle"
@@ -83,26 +83,26 @@ input_3/auto_advance = false
 input_4/name = "roll"
 input_4/auto_advance = false
 
-[sub_resource type="AnimationNodeBlendTree" id=12]
-graph_offset = Vector2( 68.235, 167.75 )
-nodes/Animation/node = SubResource( 10 )
+[sub_resource type="AnimationNodeBlendTree" id=15]
+graph_offset = Vector2( 68.235, 25.25 )
+nodes/Animation/node = SubResource( 11 )
 nodes/Animation/position = Vector2( 260, 100 )
 "nodes/Animation 2/node" = SubResource( 2 )
 "nodes/Animation 2/position" = Vector2( 240, 240 )
 "nodes/Animation 3/node" = SubResource( 3 )
 "nodes/Animation 3/position" = Vector2( 230, 370 )
-"nodes/Animation 4/node" = SubResource( 14 )
+"nodes/Animation 4/node" = SubResource( 4 )
 "nodes/Animation 4/position" = Vector2( 200, 720 )
-"nodes/Animation 5/node" = SubResource( 4 )
+"nodes/Animation 5/node" = SubResource( 5 )
 "nodes/Animation 5/position" = Vector2( 200, 520 )
 nodes/TimeScale/node = SubResource( 13 )
 nodes/TimeScale/position = Vector2( 480, 420 )
-"nodes/TimeScale 2/node" = SubResource( 15 )
+"nodes/TimeScale 2/node" = SubResource( 12 )
 "nodes/TimeScale 2/position" = Vector2( 400, 660 )
 nodes/output/position = Vector2( 1420, 200 )
-nodes/state/node = SubResource( 11 )
+nodes/state/node = SubResource( 14 )
 nodes/state/position = Vector2( 860, 280 )
-node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale 2", 0, "Animation 4", "TimeScale", 0, "Animation 5" ]
+node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
 collision_layer = 2
@@ -110,7 +110,7 @@ collision_mask = 5
 script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0 )
 shape = SubResource( 1 )
 
 [node name="States" type="Node" parent="."]
@@ -134,13 +134,10 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.73146, -0.679465, -0.0573896, 0.00133738, 0.0855926, -0.996329, 0.681883, 0.728698, 0.0635163, -0.0593981, -0.0559513, 0 )
-
-[node name="Skeleton" parent="FemaleRider/Root" index="0"]
-bones/23/bound_children = [ NodePath("Hand") ]
+transform = Transform( 0.730664, -0.680701, -0.0526887, 0.00229388, 0.07962, -0.996823, 0.682733, 0.728222, 0.0597369, -0.0564111, -0.0593843, 0 )
 
 [node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
-transform = Transform( 0.727795, 0.321654, -0.605683, -0.654299, 0.590253, -0.472751, 0.205444, 0.740365, 0.640041, -0.405871, 0.0352173, -0.868932 )
+transform = Transform( 0.713263, 0.306792, -0.630185, -0.657759, 0.603546, -0.450648, 0.242091, 0.735942, 0.632283, -0.415238, 0.0390715, -0.864317 )
 bone_name = "hand_r"
 script = ExtResource( 9 )
 
@@ -148,7 +145,7 @@ script = ExtResource( 9 )
 transform = Transform( 0.0235488, -0.352764, -0.353558, 0.365374, 0.253483, -0.228578, 0.34051, -0.247596, 0.26972, -0.0118155, -0.0011434, 0.00686678 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 12 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../FemaleRider/AnimationPlayer")
 active = true
 parameters/Animation/TimeScale/scale = 1.0

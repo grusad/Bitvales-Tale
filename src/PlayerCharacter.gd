@@ -5,6 +5,7 @@ onready var state_nodes = $States
 
 
 func _ready():
+	add_to_group("Player")
 	var initial_state = get_state("IdleState")
 	initial_state.enter_state(self, null)
 	push_state(initial_state)
@@ -22,4 +23,3 @@ func get_hand():
 	return get_node("FemaleRider/Root/Skeleton/Hand")
 		
  
-

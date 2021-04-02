@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_HeightCap_01.obj-0a4e11872b794cf3fe5f0347f400fb0c.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_HeightCap_01.obj-0a4e11872b794cf3fe5f0347f400fb0c.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_HeightCap_01.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_HeightCap_01.obj-0a4e11872b794cf3fe5f0347f400fb0c.mesh", "res://.import/SM_Bld_House_Wall_HeightCap_01.obj-0a4e11872b794cf3fe5f0347f400fb0c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

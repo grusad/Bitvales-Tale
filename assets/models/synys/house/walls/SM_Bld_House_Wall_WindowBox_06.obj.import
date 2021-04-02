@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_WindowBox_06.obj-457122ecd647785adf0724d0a8a68fc2.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_WindowBox_06.obj-457122ecd647785adf0724d0a8a68fc2.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_WindowBox_06.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_WindowBox_06.obj-457122ecd647785adf0724d0a8a68fc2.mesh", "res://.import/SM_Bld_House_Wall_WindowBox_06.obj-457122ecd647785adf0724d0a8a68fc2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

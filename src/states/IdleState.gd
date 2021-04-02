@@ -15,7 +15,9 @@ func physics_process(delta):
 		else:
 			transition_to(parent.get_state("RunState"))
 	if Input.is_action_pressed("default_attack"):
-		transition_to(parent.get_state("DefaultAttackState"))	
+		transition_to(parent.get_state("DefaultAttackState"))
+	if Input.is_action_just_pressed("roll"):
+		transition_to(parent.get_state("RollState"))
 	
 	parent.apply_friction(10, delta)
 	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_Half_Height_Window_01_Glass.obj-9bab310c7714212a5a682faaef74a6bb.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_Half_Height_Window_01_Glass.obj-9bab310c7714212a5a682faaef74a6bb.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_Half_Height_Window_01_Glass.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_Half_Height_Window_01_Glass.obj-9bab310c7714212a5a682faaef74a6bb.mesh", "res://.import/SM_Bld_House_Wall_Half_Height_Window_01_Glass.obj-9bab310c7714212a5a682faaef74a6bb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

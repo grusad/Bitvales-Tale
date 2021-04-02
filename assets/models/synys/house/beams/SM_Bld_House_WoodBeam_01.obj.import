@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_WoodBeam_01.obj-d92dfa735830850359c6bb975f11e3d3.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_WoodBeam_01.obj-d92dfa735830850359c6bb975f11e3d3.mesh" ]
+
+source_file="res://assets/models/synys/house/beams/SM_Bld_House_WoodBeam_01.obj"
+dest_files=[ "res://.import/SM_Bld_House_WoodBeam_01.obj-d92dfa735830850359c6bb975f11e3d3.mesh", "res://.import/SM_Bld_House_WoodBeam_01.obj-d92dfa735830850359c6bb975f11e3d3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

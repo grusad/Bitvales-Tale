@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_Window_08_Shutter_01.obj-00f3a17a74c67081ed9957d8bb9a4e2c.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_Window_08_Shutter_01.obj-00f3a17a74c67081ed9957d8bb9a4e2c.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_Window_08_Shutter_01.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_Window_08_Shutter_01.obj-00f3a17a74c67081ed9957d8bb9a4e2c.mesh", "res://.import/SM_Bld_House_Wall_Window_08_Shutter_01.obj-00f3a17a74c67081ed9957d8bb9a4e2c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

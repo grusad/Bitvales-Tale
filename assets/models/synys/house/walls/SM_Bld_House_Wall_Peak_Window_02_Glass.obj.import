@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_Peak_Window_02_Glass.obj-fcd47b141a7221bc0802220e889cd38f.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_Peak_Window_02_Glass.obj-fcd47b141a7221bc0802220e889cd38f.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_Peak_Window_02_Glass.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_Peak_Window_02_Glass.obj-fcd47b141a7221bc0802220e889cd38f.mesh", "res://.import/SM_Bld_House_Wall_Peak_Window_02_Glass.obj-fcd47b141a7221bc0802220e889cd38f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

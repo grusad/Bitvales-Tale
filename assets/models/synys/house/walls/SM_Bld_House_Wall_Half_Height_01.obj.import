@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bld_House_Wall_Half_Height_01.obj-7f172ac34bb8a2046bccaa5fe8dcfbfa.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bld_House_Wall_Half_Height_01.obj-7f172ac34bb8a2046bccaa5fe8dcfbfa.mesh" ]
+
+source_file="res://assets/models/synys/house/walls/SM_Bld_House_Wall_Half_Height_01.obj"
+dest_files=[ "res://.import/SM_Bld_House_Wall_Half_Height_01.obj-7f172ac34bb8a2046bccaa5fe8dcfbfa.mesh", "res://.import/SM_Bld_House_Wall_Half_Height_01.obj-7f172ac34bb8a2046bccaa5fe8dcfbfa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
