@@ -63,7 +63,7 @@ nodes/roll/node = SubResource( 9 )
 nodes/roll/position = Vector2( 1080, 80 )
 nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( 680, 120 )
-node_connections = [ "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "output", 0, "roll", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale", 0, "Animation 4" ]
+node_connections = [ "output", 0, "roll", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "roll", 0, "state", "roll", 1, "TimeScale", "TimeScale", 0, "Animation 4" ]
 
 [sub_resource type="AnimationNodeTimeScale" id=12]
 
@@ -102,7 +102,7 @@ nodes/TimeScale/position = Vector2( 480, 420 )
 nodes/output/position = Vector2( 1420, 200 )
 nodes/state/node = SubResource( 14 )
 nodes/state/position = Vector2( 860, 280 )
-node_connections = [ "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "output", 0, "state", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
+node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
 collision_layer = 2
@@ -134,10 +134,10 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.952408, -0.302904, -0.0341691, -0.141551, -0.340205, -0.929636, 0.269966, 0.89023, -0.36689, -0.0371864, -0.0790147, 0 )
+transform = Transform( 0.997704, 0.0522726, 0.0430666, 0.0606244, -0.405752, -0.91197, -0.0301967, 0.912487, -0.40799, 0.0489725, -0.0388742, 0 )
 
 [node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
-transform = Transform( 0.53642, 0.709302, -0.457323, 0.199982, 0.41962, 0.885396, 0.819915, -0.566401, 0.0832452, -0.0963628, 0.446561, -1.1519 )
+transform = Transform( 0.213422, 0.831141, -0.513474, 0.585066, 0.312179, 0.748492, 0.782399, -0.460161, -0.419648, -0.167193, 0.330425, -1.30109 )
 bone_name = "hand_r"
 script = ExtResource( 9 )
 

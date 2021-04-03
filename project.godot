@@ -48,6 +48,19 @@ config/name="Unnamed"
 run/main_scene="res://src/TestWorld.tscn"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "scatter" )
+
+[importer_defaults]
+
+wavefront_obj={
+"generate_tangents": true,
+"offset_mesh": Vector3( 0, 0, 0 ),
+"optimize_mesh": true,
+"scale_mesh": Vector3( 0.02, 0.02, 0.02 )
+}
+
 [input]
 
 default_attack={

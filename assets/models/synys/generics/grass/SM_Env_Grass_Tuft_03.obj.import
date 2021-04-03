@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Env_Grass_Tuft_03.obj-d64ffe62cb792fa2115e5b6b3a967ada.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Env_Grass_Tuft_03.obj-d64ffe62cb792fa2115e5b6b3a967ada.mesh" ]
+
+source_file="res://assets/models/synys/generics/grass/SM_Env_Grass_Tuft_03.obj"
+dest_files=[ "res://.import/SM_Env_Grass_Tuft_03.obj-d64ffe62cb792fa2115e5b6b3a967ada.mesh", "res://.import/SM_Env_Grass_Tuft_03.obj-d64ffe62cb792fa2115e5b6b3a967ada.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

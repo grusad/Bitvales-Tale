@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Generic_TreeStump_01.obj-f5fd6ce672acba04a11d29cf67b6ebb5.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Generic_TreeStump_01.obj-f5fd6ce672acba04a11d29cf67b6ebb5.mesh" ]
+
+source_file="res://assets/models/synys/generics/trees/SM_Generic_TreeStump_01.obj"
+dest_files=[ "res://.import/SM_Generic_TreeStump_01.obj-f5fd6ce672acba04a11d29cf67b6ebb5.mesh", "res://.import/SM_Generic_TreeStump_01.obj-f5fd6ce672acba04a11d29cf67b6ebb5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

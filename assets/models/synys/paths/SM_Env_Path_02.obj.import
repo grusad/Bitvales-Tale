@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Env_Path_02.obj-30af17d3eb3d945bd52edd1444f7d806.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Env_Path_02.obj-30af17d3eb3d945bd52edd1444f7d806.mesh" ]
+
+source_file="res://assets/models/synys/paths/SM_Env_Path_02.obj"
+dest_files=[ "res://.import/SM_Env_Path_02.obj-30af17d3eb3d945bd52edd1444f7d806.mesh", "res://.import/SM_Env_Path_02.obj-30af17d3eb3d945bd52edd1444f7d806.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
