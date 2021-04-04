@@ -102,7 +102,7 @@ nodes/TimeScale/position = Vector2( 480, 420 )
 nodes/output/position = Vector2( 1420, 200 )
 nodes/state/node = SubResource( 14 )
 nodes/state/position = Vector2( 860, 280 )
-node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale", 0, "Animation 5", "TimeScale 2", 0, "Animation 4" ]
+node_connections = [ "output", 0, "state", "state", 0, "Animation", "state", 1, "Animation 2", "state", 2, "Animation 3", "state", 3, "TimeScale", "state", 4, "TimeScale 2", "TimeScale 2", 0, "Animation 4", "TimeScale", 0, "Animation 5" ]
 
 [node name="PlayerCharacter" type="KinematicBody"]
 collision_layer = 2
@@ -134,10 +134,10 @@ script = ExtResource( 8 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="FemaleRider" index="0"]
-transform = Transform( 0.997704, 0.0522726, 0.0430666, 0.0606244, -0.405752, -0.91197, -0.0301967, 0.912487, -0.40799, 0.0489725, -0.0388742, 0 )
+transform = Transform( 0.731358, -0.679628, -0.0567644, 0.0013929, 0.0847213, -0.996404, 0.681993, 0.728648, 0.0629082, -0.0592387, -0.0556882, 0 )
 
 [node name="Hand" type="BoneAttachment" parent="FemaleRider/Root/Skeleton" index="1"]
-transform = Transform( 0.213422, 0.831141, -0.513474, 0.585066, 0.312179, 0.748492, 0.782399, -0.460161, -0.419648, -0.167193, 0.330425, -1.30109 )
+transform = Transform( 0.729031, 0.342094, -0.592862, -0.659572, 0.582635, -0.47487, 0.182972, 0.73723, 0.650394, -0.400244, 0.0321124, -0.865762 )
 bone_name = "hand_r"
 script = ExtResource( 9 )
 
@@ -153,6 +153,6 @@ parameters/Animation/roll/active = false
 parameters/Animation/state/current = 0
 parameters/TimeScale/scale = 1.5
 "parameters/TimeScale 2/scale" = 2.0
-parameters/state/current = 2
+parameters/state/current = 0
 
 [editable path="FemaleRider"]
