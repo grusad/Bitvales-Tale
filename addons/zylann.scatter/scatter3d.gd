@@ -3,7 +3,8 @@ extends Spatial
 
 
 export(Array, PackedScene) var _scenes = []
-
+export(float) var min_scale = 1
+export(float) var max_scale = 1
 
 func _ready():
 	_remove_dangling_patterns()

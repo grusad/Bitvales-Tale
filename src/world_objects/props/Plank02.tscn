@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/models/synys/generics/trees/SM_Generic_Tree_02.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Plank_02.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/materials/01_A.material" type="Material" id=2]
 
-[node name="GenericTree02" type="MeshInstance"]
+[node name="Plank02" type="MeshInstance"]
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Env_Bush_Cluster_02.obj-7997c6c775cde057dd45a0b0d2d56eeb.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Env_Bush_Cluster_02.obj-7997c6c775cde057dd45a0b0d2d56eeb.mesh" ]
+
+source_file="res://assets/models/synys/generics/bushes/SM_Env_Bush_Cluster_02.obj"
+dest_files=[ "res://.import/SM_Env_Bush_Cluster_02.obj-7997c6c775cde057dd45a0b0d2d56eeb.mesh", "res://.import/SM_Env_Bush_Cluster_02.obj-7997c6c775cde057dd45a0b0d2d56eeb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

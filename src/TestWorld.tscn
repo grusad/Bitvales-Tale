@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://assets/tiles/grid_tiles.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://src/PlayerCharacter.tscn" type="PackedScene" id=2]
@@ -9,12 +9,43 @@
 [ext_resource path="res://src/Debug.gd" type="Script" id=7]
 [ext_resource path="res://src/CommandLine.gd" type="Script" id=8]
 [ext_resource path="res://src/world_objects/houses/FarmHouse01.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/world_objects/trees/GenericTree01.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/models/synys/generics/trees/SM_Generic_Tree_01.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff01.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff03.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/materials/01_A.material" type="Material" id=12]
 [ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=13]
-[ext_resource path="res://src/world_objects/trees/GenericTree02.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/models/synys/generics/trees/SM_Generic_Tree_02.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://assets/models/synys/generics/trees/SM_Generic_Tree_02.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://assets/models/synys/generics/cliffs/SM_Env_Rock_Cliff_04.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff04.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/world_objects/generics/trees/GenericTree02.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/world_objects/generics/trees/GenericTree01.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff02.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/world_objects/props/Plank03.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/models/synys/generics/trees/SM_Generic_Tree_01.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://src/world_objects/props/GroundPlanks02.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff05.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster06.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/world_objects/props/Plank01.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/world_objects/props/GrounPlanks01.tscn" type="PackedScene" id=26]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster02.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Ground_Planks_02.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://assets/models/synys/generics/bushes/SM_Env_Bush_Cluster_01.obj" type="ArrayMesh" id=29]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster03.tscn" type="PackedScene" id=30]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster04.tscn" type="PackedScene" id=31]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster01.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/world_objects/generics/bushes/BushCluster05.tscn" type="PackedScene" id=33]
+[ext_resource path="res://src/world_objects/props/Plank02.tscn" type="PackedScene" id=34]
+[ext_resource path="res://src/world_objects/props/WoodPile03.tscn" type="PackedScene" id=35]
+[ext_resource path="res://src/world_objects/props/WoodPile02.tscn" type="PackedScene" id=36]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Wood_Pile_03.obj" type="ArrayMesh" id=37]
+[ext_resource path="res://src/world_objects/props/WoodPile01.tscn" type="PackedScene" id=38]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Wood_Pile_02.obj" type="ArrayMesh" id=39]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Wood_Pile_01.obj" type="ArrayMesh" id=40]
+[ext_resource path="res://assets/models/synys/generics/bushes/SM_Env_Bush_Cluster_05.obj" type="ArrayMesh" id=41]
+[ext_resource path="res://src/world_objects/generics/trees/TreeLarge02.tscn" type="PackedScene" id=42]
+[ext_resource path="res://assets/models/synys/props/SM_Prop_Ground_Planks_01.obj" type="ArrayMesh" id=43]
+[ext_resource path="res://assets/models/synys/generics/bushes/SM_Env_Bush_Cluster_02.obj" type="ArrayMesh" id=44]
+[ext_resource path="res://src/world_objects/generics/trees/TreeLarge01.tscn" type="PackedScene" id=45]
+[ext_resource path="res://assets/models/synys/generics/trees/SM_Env_Tree_Large_01.obj" type="ArrayMesh" id=46]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.431373, 0.760784, 0.937255, 1 )
@@ -28,6 +59,12 @@ background_sky = SubResource( 1 )
 fog_color = Color( 0.733333, 0.882353, 1, 1 )
 fog_depth_begin = 50.0
 fog_depth_end = 120.0
+ssao_enabled = true
+glow_bloom = 0.03
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_contrast = 1.35
+adjustment_saturation = 1.79
 
 [sub_resource type="PlaneMesh" id=3]
 material = ExtResource( 4 )
@@ -40,7 +77,7 @@ albedo_color = Color( 0.278431, 0.403922, 0.278431, 1 )
 
 [sub_resource type="PlaneMesh" id=5]
 material = SubResource( 4 )
-size = Vector2( 100, 100 )
+size = Vector2( 200, 200 )
 
 [sub_resource type="ConcavePolygonShape" id=6]
 data = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50 )
@@ -53,7 +90,7 @@ data = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, 
 visible = false
 mesh_library = ExtResource( 1 )
 data = {
-"cells": PoolIntArray( 2, 0, 1, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 1, 7, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 0, 65533, 0, 0, 65534, 0, 1, 0, 1, 1, 2, 1, 1, 3, 1, 0, 4, 1, 0, 5, 1, 1, 6, 1, 1, 65529, 1, 1, 65530, 1, 1, 65531, 1, 1, 65532, 1, 0, 65533, 1, 0, 65534, 1, 1, 65535, 1, 1, 0, 2, 1, 1, 2, 1, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 1, 6, 2, 1, 65529, 2, 1, 65530, 2, 1, 65531, 2, 1, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 1, 5, 3, 1, 65529, 3, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 4, 0, 1, 4, 0, 2, 4, 1, 3, 4, 1, 4, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 0, 65535, 4, 0, 0, 5, 1, 1, 5, 1, 2, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 65534, 65520, 1, 65535, 65520, 1, 0, 65521, 1, 1, 65521, 1, 2, 65521, 1, 65530, 65521, 1, 65531, 65521, 1, 65532, 65521, 1, 65533, 65521, 1, 65534, 65521, 1, 65535, 65521, 1, 0, 65522, 1, 1, 65522, 1, 2, 65522, 1, 3, 65522, 1, 65528, 65522, 1, 65529, 65522, 1, 65530, 65522, 1, 65531, 65522, 1, 65532, 65522, 1, 65533, 65522, 1, 65534, 65522, 1, 65535, 65522, 1, 0, 65523, 0, 1, 65523, 1, 2, 65523, 1, 3, 65523, 1, 4, 65523, 1, 5, 65523, 1, 65528, 65523, 1, 65529, 65523, 1, 65530, 65523, 0, 65531, 65523, 0, 65532, 65523, 0, 65533, 65523, 0, 65534, 65523, 0, 65535, 65523, 0, 0, 65524, 0, 1, 65524, 0, 2, 65524, 0, 3, 65524, 0, 4, 65524, 1, 5, 65524, 1, 6, 65524, 1, 7, 65524, 1, 65527, 65524, 1, 65528, 65524, 1, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65533, 65524, 0, 65534, 65524, 0, 65535, 65524, 0, 0, 65525, 0, 1, 65525, 0, 2, 65525, 0, 3, 65525, 0, 4, 65525, 0, 5, 65525, 0, 6, 65525, 1, 7, 65525, 1, 8, 65525, 1, 9, 65525, 1, 65526, 65525, 1, 65527, 65525, 1, 65528, 65525, 0, 65529, 65525, 0, 65530, 65525, 0, 65531, 65525, 0, 65532, 65525, 0, 65533, 65525, 0, 65534, 65525, 0, 65535, 65525, 0, 0, 65526, 0, 1, 65526, 0, 2, 65526, 0, 3, 65526, 0, 4, 65526, 0, 5, 65526, 0, 6, 65526, 0, 7, 65526, 1, 8, 65526, 1, 9, 65526, 1, 10, 65526, 1, 65526, 65526, 1, 65527, 65526, 1, 65528, 65526, 0, 65529, 65526, 0, 65530, 65526, 0, 65531, 65526, 0, 65532, 65526, 0, 65533, 65526, 0, 65534, 65526, 0, 65535, 65526, 0, 0, 65527, 0, 1, 65527, 0, 2, 65527, 0, 3, 65527, 0, 4, 65527, 0, 5, 65527, 0, 6, 65527, 0, 7, 65527, 0, 8, 65527, 0, 9, 65527, 1, 10, 65527, 1, 65526, 65527, 1, 65527, 65527, 1, 65528, 65527, 0, 65529, 65527, 0, 65530, 65527, 0, 65531, 65527, 0, 65532, 65527, 0, 65533, 65527, 0, 65534, 65527, 0, 65535, 65527, 0, 0, 65528, 0, 1, 65528, 0, 2, 65528, 0, 3, 65528, 0, 4, 65528, 0, 5, 65528, 0, 6, 65528, 0, 7, 65528, 0, 8, 65528, 0, 9, 65528, 0, 10, 65528, 1, 11, 65528, 1, 65526, 65528, 1, 65527, 65528, 1, 65528, 65528, 0, 65529, 65528, 0, 65530, 65528, 0, 65531, 65528, 0, 65532, 65528, 0, 65533, 65528, 0, 65534, 65528, 0, 65535, 65528, 0, 0, 65529, 0, 1, 65529, 0, 2, 65529, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 6, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 10, 65529, 1, 11, 65529, 1, 65526, 65529, 1, 65527, 65529, 1, 65528, 65529, 0, 65529, 65529, 0, 65530, 65529, 0, 65531, 65529, 0, 65532, 65529, 0, 65533, 65529, 0, 65534, 65529, 0, 65535, 65529, 0, 0, 65530, 0, 1, 65530, 0, 2, 65530, 0, 3, 65530, 0, 4, 65530, 0, 5, 65530, 0, 6, 65530, 0, 7, 65530, 0, 8, 65530, 0, 9, 65530, 0, 10, 65530, 1, 11, 65530, 1, 65526, 65530, 1, 65527, 65530, 1, 65528, 65530, 0, 65529, 65530, 0, 65530, 65530, 0, 65531, 65530, 0, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 3, 65531, 0, 4, 65531, 0, 5, 65531, 0, 6, 65531, 0, 7, 65531, 0, 8, 65531, 0, 9, 65531, 0, 10, 65531, 1, 65526, 65531, 1, 65527, 65531, 1, 65528, 65531, 0, 65529, 65531, 0, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 5, 65532, 0, 6, 65532, 0, 7, 65532, 0, 8, 65532, 0, 9, 65532, 0, 10, 65532, 1, 65527, 65532, 1, 65528, 65532, 1, 65529, 65532, 0, 65530, 65532, 1, 65531, 65532, 1, 65532, 65532, 1, 65533, 65532, 1, 65534, 65532, 0, 65535, 65532, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 1, 6, 65533, 1, 7, 65533, 0, 8, 65533, 0, 9, 65533, 1, 10, 65533, 1, 65528, 65533, 1, 65529, 65533, 1, 65530, 65533, 1, 65531, 65533, 1, 65532, 65533, 1, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 3, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 1, 9, 65534, 1, 65528, 65534, 1, 65529, 65534, 1, 65530, 65534, 1, 65531, 65534, 1, 65532, 65534, 1, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 2, 65535, 1, 3, 65535, 0, 4, 65535, 0, 5, 65535, 0, 6, 65535, 1, 7, 65535, 1, 65529, 65535, 1, 65530, 65535, 1, 65531, 65535, 1, 65532, 65535, 0, 65533, 65535, 0, 65534, 65535, 1, 65535, 65535, 1 )
+"cells": PoolIntArray( 2, 0, 1, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, -2147483647, 7, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 0, 65533, 0, 0, 65534, 0, 1, 0, 1, 1, 2, 1, 1, 3, 1, 0, 4, 1, 0, 5, 1, 1, 6, 1, 1, 65529, 1, 1, 65530, 1, 1, 65531, 1, 1, 65532, 1, 0, 65533, 1, 0, 65534, 1, 1, 65535, 1, 1, 0, 2, 1, 1, 2, 1, 2, 2, 0, 3, 2, -2147483648, 4, 2, -1610612736, 5, 2, 1, 6, 2, 536870913, 65529, 2, -1610612735, 65530, 2, 1, 65531, 2, 1, 65532, 2, -1610612736, 65533, 2, 1610612736, 65534, 2, -1610612736, 65535, 2, -1610612736, 0, 3, -2147483648, 1, 3, -1610612736, 2, 3, -1610612736, 3, 3, 0, 4, 3, 1610612737, 5, 3, 1, 65529, 3, -1610612735, 65530, 3, 1, 65531, 3, 1610612737, 65532, 3, 1, 65533, 3, 0, 65534, 3, -1610612736, 65535, 3, 0, 0, 4, 0, 1, 4, 0, 2, 4, 1, 3, 4, 1, 4, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 0, 65535, 4, 0, 0, 5, 1, 1, 5, 1, 2, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 65534, 65520, 1, 65535, 65520, 1, 0, 65521, 1, 1, 65521, 1, 2, 65521, 1, 65530, 65521, 1, 65531, 65521, 1, 65532, 65521, 1, 65533, 65521, 1, 65534, 65521, 1, 65535, 65521, 1, 0, 65522, 1, 1, 65522, 1, 2, 65522, 1, 3, 65522, 1, 65528, 65522, 1, 65529, 65522, 1, 65530, 65522, 1, 65531, 65522, 1, 65532, 65522, 1, 65533, 65522, 1, 65534, 65522, 1, 65535, 65522, 1, 0, 65523, 0, 1, 65523, 1, 2, 65523, 1, 3, 65523, 1, 4, 65523, 1, 5, 65523, 1, 65528, 65523, 1, 65529, 65523, 1, 65530, 65523, 0, 65531, 65523, 0, 65532, 65523, 0, 65533, 65523, 0, 65534, 65523, 0, 65535, 65523, 0, 0, 65524, 0, 1, 65524, 0, 2, 65524, 0, 3, 65524, 0, 4, 65524, 1, 5, 65524, 1, 6, 65524, 1, 7, 65524, 1, 65527, 65524, 1, 65528, 65524, 1, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65533, 65524, 0, 65534, 65524, 0, 65535, 65524, 0, 0, 65525, 0, 1, 65525, 0, 2, 65525, 0, 3, 65525, 0, 4, 65525, 0, 5, 65525, 0, 6, 65525, 1, 7, 65525, 1, 8, 65525, 1, 9, 65525, 1, 65526, 65525, 1, 65527, 65525, 1, 65528, 65525, 0, 65529, 65525, 0, 65530, 65525, 0, 65531, 65525, 0, 65532, 65525, 0, 65533, 65525, 0, 65534, 65525, 0, 65535, 65525, 0, 0, 65526, 0, 1, 65526, 0, 2, 65526, 0, 3, 65526, 0, 4, 65526, 0, 5, 65526, 0, 6, 65526, 0, 7, 65526, 1, 8, 65526, 1, 9, 65526, 1, 10, 65526, 1, 65526, 65526, 1, 65527, 65526, 1, 65528, 65526, 0, 65529, 65526, 0, 65530, 65526, 0, 65531, 65526, 0, 65532, 65526, 0, 65533, 65526, 0, 65534, 65526, 0, 65535, 65526, 0, 0, 65527, 0, 1, 65527, 0, 2, 65527, 0, 3, 65527, 0, 4, 65527, 0, 5, 65527, 0, 6, 65527, 0, 7, 65527, 0, 8, 65527, 0, 9, 65527, 1, 10, 65527, 1, 65526, 65527, 1, 65527, 65527, 1, 65528, 65527, 0, 65529, 65527, 0, 65530, 65527, 0, 65531, 65527, 0, 65532, 65527, 0, 65533, 65527, 0, 65534, 65527, 0, 65535, 65527, 0, 0, 65528, 0, 1, 65528, 0, 2, 65528, 0, 3, 65528, 0, 4, 65528, 0, 5, 65528, 0, 6, 65528, 0, 7, 65528, 0, 8, 65528, 0, 9, 65528, 0, 10, 65528, 1, 11, 65528, 1, 65526, 65528, 1, 65527, 65528, 1, 65528, 65528, 0, 65529, 65528, 0, 65530, 65528, 0, 65531, 65528, 0, 65532, 65528, 0, 65533, 65528, 0, 65534, 65528, 0, 65535, 65528, 0, 0, 65529, 0, 1, 65529, 0, 2, 65529, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 6, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 10, 65529, 1, 11, 65529, 1, 65526, 65529, 1, 65527, 65529, 1, 65528, 65529, 0, 65529, 65529, 0, 65530, 65529, 0, 65531, 65529, 0, 65532, 65529, 0, 65533, 65529, 0, 65534, 65529, 0, 65535, 65529, 0, 0, 65530, 0, 1, 65530, 0, 2, 65530, 0, 3, 65530, 0, 4, 65530, 0, 5, 65530, 0, 6, 65530, 0, 7, 65530, 0, 8, 65530, 0, 9, 65530, 0, 10, 65530, 1, 11, 65530, 1, 65526, 65530, 1, 65527, 65530, 1, 65528, 65530, 0, 65529, 65530, 0, 65530, 65530, 0, 65531, 65530, 0, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 3, 65531, 0, 4, 65531, 0, 5, 65531, 0, 6, 65531, 0, 7, 65531, 0, 8, 65531, 0, 9, 65531, 0, 10, 65531, 1, 65526, 65531, 1, 65527, 65531, 1, 65528, 65531, 0, 65529, 65531, 0, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 5, 65532, 0, 6, 65532, 0, 7, 65532, 0, 8, 65532, 0, 9, 65532, 0, 10, 65532, 1, 65527, 65532, 1, 65528, 65532, 1, 65529, 65532, 0, 65530, 65532, 1, 65531, 65532, 1, 65532, 65532, 1, 65533, 65532, 1, 65534, 65532, 536870912, 65535, 65532, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 536870913, 6, 65533, 1, 7, 65533, 0, 8, 65533, 0, 9, 65533, 1, 10, 65533, 536870913, 65528, 65533, 1, 65529, 65533, 536870913, 65530, 65533, 1, 65531, 65533, 1, 65532, 65533, 536870913, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, -1073741823, 1, 65534, 1, 2, 65534, 1, 3, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 1, 9, 65534, 1, 65528, 65534, 1, 65529, 65534, 1, 65530, 65534, 1, 65531, 65534, 1, 65532, 65534, 1, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 2, 65535, 1, 3, 65535, 0, 4, 65535, 0, 5, 65535, 0, 6, 65535, 1, 7, 65535, 1, 65529, 65535, 1, 65530, 65535, 1, 65531, 65535, 1, 65532, 65535, 0, 65533, 65535, 0, 65534, 65535, 1, 65535, 65535, 1 )
 }
 script = ExtResource( 6 )
 __meta__ = {
@@ -169,161 +206,240 @@ shape = SubResource( 6 )
 
 [node name="Scatter3D" type="Spatial" parent="."]
 script = ExtResource( 13 )
-_scenes = [ ExtResource( 10 ), ExtResource( 14 ) ]
+_scenes = [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 34 ), ExtResource( 20 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 45 ), ExtResource( 42 ) ]
+min_scale = 0.5
+max_scale = 0.5
 
-[node name="GenericTree02" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.0377565, 0, 0.999287, 0, 1, 0, -0.999287, 0, -0.0377565, -21.3212, 1.90735e-06, -1.07569 )
+[node name="GenericTree01" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.955613, 0, -0.294625, 0, 1, 0, 0.294625, 0, 0.955613, -20.5388, 0, 3.04649 )
 
-[node name="GenericTree03" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.836193, 0, -0.548435, 0, 1, 0, 0.548435, 0, 0.836193, 4.82525, 0, 17.5349 )
+[node name="GenericTree02" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.606729, 0, 0.794909, 0, 1, 0, -0.794909, 0, 0.606729, -18.8026, 0, 6.70559 )
 
-[node name="GenericTree04" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.38893, 0, -0.921267, 0, 1, 0, 0.921267, 0, 0.38893, -16.4303, -1.90735e-06, 5.14225 )
+[node name="GenericTree03" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( 0.948815, 0, -0.315832, 0, 1, 0, 0.315832, 0, 0.948815, -22.8773, 1.90735e-06, 6.62338 )
 
-[node name="GenericTree05" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.900098, 0, -0.435687, 0, 1, 0, 0.435687, 0, -0.900098, 0.279857, 0, 0.921299 )
+[node name="GenericTree04" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.712683, 0, -0.701486, 0, 1, 0, 0.701486, 0, -0.712683, 10.8436, -3.8147e-06, 17.6151 )
 
-[node name="GenericTree06" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.176829, 0, -0.984242, 0, 1, 0, 0.984242, 0, 0.176829, -31.8932, 0, 5.14253 )
+[node name="GenericTree05" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.198927, 0, -0.980014, 0, 1, 0, 0.980014, 0, 0.198927, 7.11358, -1.90735e-06, 21.2982 )
 
-[node name="GenericTree13" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.98488, 0, -0.173236, 0, 1, 0, 0.173236, 0, -0.98488, -22.3086, 0, 23.5388 )
+[node name="GenericTree06" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.25428, 0, -0.967131, 0, 1, 0, 0.967131, 0, -0.25428, 12.0978, 0, 24.6208 )
 
-[node name="GenericTree14" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.63041, 0, 0.776262, 0, 1, 0, -0.776262, 0, -0.63041, -27.4474, 1.90735e-06, 20.7917 )
+[node name="GenericTree07" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( -0.396872, 0, -0.917874, 0, 1, 0, 0.917874, 0, -0.396872, 12.4088, 0, 20.9087 )
 
-[node name="GenericTree15" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.576524, 0, -0.81708, 0, 1, 0, 0.81708, 0, 0.576524, -25.7543, 0, 23.7793 )
+[node name="GenericTree08" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( 0.916823, 0, -0.399293, 0, 1, 0, 0.399293, 0, 0.916823, 9.00011, -1.90735e-06, 24.8068 )
 
-[node name="GenericTree16" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.973388, 0, -0.229162, 0, 1, 0, 0.229162, 0, 0.973388, -22.6391, 0, 26.6477 )
+[node name="RockCliff07" parent="Scatter3D" instance=ExtResource( 16 )]
+transform = Transform( 0.572799, 0, -0.212037, 0, 0.610785, 0, 0.212037, 0, 0.572799, -41.7393, -3.8147e-06, 47.1988 )
 
-[node name="GenericTree07" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.38893, 0, -0.921267, 0, 1, 0, 0.921267, 0, 0.38893, -34.5443, -1.90735e-06, 18.5269 )
+[node name="RockCliff08" parent="Scatter3D" instance=ExtResource( 23 )]
+transform = Transform( -0.595792, 0, -0.328394, 0, 0.680302, 0, 0.328394, 0, -0.595792, -46.7563, 0, -25.5476 )
+
+[node name="RockCliff09" parent="Scatter3D" instance=ExtResource( 23 )]
+transform = Transform( 0.640521, 0, -0.391863, 0, 0.750882, 0, 0.391863, 0, 0.640521, -25.6264, -3.8147e-06, -47.6363 )
+
+[node name="RockCliff03" parent="Scatter3D" instance=ExtResource( 11 )]
+transform = Transform( 0.338584, 0, -0.571664, 0, 0.664409, 0, 0.571664, 0, 0.338584, 28.7565, 7.62939e-06, -46.0613 )
+
+[node name="RockCliff10" parent="Scatter3D" instance=ExtResource( 11 )]
+transform = Transform( 0.415309, 0, -0.459554, 0, 0.619412, 0, 0.459554, 0, 0.415309, 47.0657, 7.62939e-06, -24.3627 )
+
+[node name="RockCliff12" parent="Scatter3D" instance=ExtResource( 11 )]
+transform = Transform( 0.546298, 0, -0.338987, 0, 0.642926, 0, 0.338987, 0, 0.546298, -47.4262, 0, 32.0272 )
+
+[node name="RockCliff13" parent="Scatter3D" instance=ExtResource( 16 )]
+transform = Transform( 0.586975, 0, -0.0865481, 0, 0.593322, 0, 0.0865481, 0, 0.586975, 23.7065, 0, 46.364 )
+
+[node name="BushCluster01" parent="Scatter3D" instance=ExtResource( 32 )]
+transform = Transform( 0.114245, 0, -0.676845, 0, 0.686419, 0, 0.676845, 0, 0.114245, -42.1968, -3.8147e-06, -17.6131 )
+
+[node name="BushCluster04" parent="Scatter3D" instance=ExtResource( 27 )]
+transform = Transform( -0.635142, 0, -0.143337, 0, 0.651115, 0, 0.143337, 0, -0.635142, -15.5832, 0, -48.046 )
+
+[node name="BushCluster08" parent="Scatter3D" instance=ExtResource( 30 )]
+transform = Transform( 0.499959, 0, 0.253775, 0, 0.560679, 0, -0.253775, 0, 0.499959, -48.8566, -3.8147e-06, 21.9866 )
+
+[node name="BushCluster09" parent="Scatter3D" instance=ExtResource( 30 )]
+transform = Transform( -0.120275, 0, -0.569252, 0, 0.581819, 0, 0.569252, 0, -0.120275, -41.9492, 0, -4.50737 )
+
+[node name="BushCluster10" parent="Scatter3D" instance=ExtResource( 30 )]
+transform = Transform( 0.143354, 0, 0.527779, 0, 0.546902, 0, -0.527779, 0, 0.143354, -46.8904, -3.8147e-06, 9.08217 )
+
+[node name="BushCluster11" parent="Scatter3D" instance=ExtResource( 31 )]
+transform = Transform( 0.248268, 0, 0.315834, 0, 0.401731, 0, -0.315834, 0, 0.248268, -48.2983, 0, -11.2134 )
+
+[node name="BushCluster12" parent="Scatter3D" instance=ExtResource( 24 )]
+transform = Transform( 0.0930204, 0, 0.329738, 0, 0.342608, 0, -0.329738, 0, 0.0930204, 35.4711, 3, -31.2335 )
+
+[node name="BushCluster13" parent="Scatter3D" instance=ExtResource( 24 )]
+transform = Transform( -0.326478, 0, -0.12117, 0, 0.348238, 0, 0.12117, 0, -0.326478, 38.8573, 3, -36.5995 )
+
+[node name="RockCliff04" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 16 )]
+transform = Transform( -0.400877, 0, 0.505891, 0, 0.645467, 0, -0.505891, 0, -0.400877, -38.4329, 7.62939e-06, -38.9508 )
 mesh = ExtResource( 15 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree08" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( -0.900098, 0, -0.435687, 0, 1, 0, 0.435687, 0, -0.900098, -20.3067, -1.90735e-06, 28.7472 )
+[node name="RockCliff05" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 16 )]
+transform = Transform( -0.459351, 0, 0.351952, 0, 0.578683, 0, -0.351952, 0, -0.459351, 38.9216, 0, -36.1973 )
 mesh = ExtResource( 15 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree09" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.176829, 0, -0.984242, 0, 1, 0, 0.984242, 0, 0.176829, -11.5921, 0, 30.0882 )
-mesh = ExtResource( 15 )
+[node name="GenericTree13" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.561307, 0, 0.858847, 0, 1.026, 0, -0.858847, 0, 0.561307, -41.5121, 0, 17.4943 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree10" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( -0.0190541, 0, 0.999818, 0, 1, 0, -0.999818, 0, -0.0190541, -13.7222, 0, 23.3922 )
-mesh = ExtResource( 15 )
+[node name="GenericTree14" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.61859, 0, -0.874372, 0, 1.07106, 0, 0.874372, 0, -0.61859, -37.9757, -3.8147e-06, 4.91379 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree11" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.0219387, 0, 0.999759, 0, 1, 0, -0.999759, 0, 0.0219387, -17.3612, 0, 27.0708 )
-mesh = ExtResource( 15 )
+[node name="GenericTree15" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.959513, 0, -0.862494, 0, 1.29018, 0, 0.862494, 0, 0.959513, -39.1078, 3.8147e-06, 21.5395 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree12" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.00581781, 0, 0.999983, 0, 1, 0, -0.999983, 0, 0.00581781, 6.5866, -1.90735e-06, 28.5303 )
-mesh = ExtResource( 15 )
+[node name="GenericTree16" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 1.18462, 0, 0.516675, 0, 1.29239, 0, -0.516675, 0, 1.18462, -38.6041, 0, 16.6914 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree17" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.677254, 0, -0.735749, 0, 1, 0, 0.735749, 0, 0.677254, 0.112103, 0, 30.4325 )
-mesh = ExtResource( 15 )
+[node name="GenericTree17" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.0942661, 0, 1.1772, 0, 1.18096, 0, -1.1772, 0, -0.0942661, -33.2023, 3.8147e-06, -4.73763 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree18" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( -0.68904, 0, -0.724723, 0, 1, 0, 0.724723, 0, -0.68904, -4.39198, 0, 32.563 )
-mesh = ExtResource( 15 )
+[node name="GenericTree18" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 1.04103, 0, -0.360549, 0, 1.1017, 0, 0.360549, 0, 1.04103, -30.3592, 3.8147e-06, -11.5049 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree19" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.664583, 0, -0.747215, 0, 1, 0, 0.747215, 0, 0.664583, -8.20656, 0, 32.6127 )
-mesh = ExtResource( 15 )
+[node name="GenericTree21" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 1.03132, 0, -0.0984849, 0, 1.03601, 0, 0.0984849, 0, 1.03132, -28.7241, 0, 38.941 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree20" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( -0.98488, 0, -0.173236, 0, 1, 0, 0.173236, 0, -0.98488, 14.9928, 1.90735e-06, 25.2686 )
-mesh = ExtResource( 15 )
+[node name="GenericTree23" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.732671, 0, 0.93377, 0, 1.1869, 0, -0.93377, 0, 0.732671, -22.2098, 0, -36.6502 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree21" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( -0.63041, 0, 0.776262, 0, 1, 0, -0.776262, 0, -0.63041, 18.8581, 0, 20.7052 )
-mesh = ExtResource( 15 )
+[node name="GenericTree24" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.0432452, 0, 1.21979, 0, 1.22055, 0, -1.21979, 0, -0.0432452, -24.425, 3.8147e-06, -33.6642 )
+mesh = ExtResource( 21 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree22" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 14 )]
-transform = Transform( 0.576524, 0, -0.81708, 0, 1, 0, 0.81708, 0, 0.576524, 21.5863, -1.90735e-06, 17.6424 )
-mesh = ExtResource( 15 )
+[node name="GenericTree25" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( -0.0953598, 0, 1.05535, 0, 1.05965, 0, -1.05535, 0, -0.0953598, 26.3085, 0, -36.2297 )
+mesh = ExtResource( 14 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree01" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.973388, 0, -0.229162, 0, 1, 0, 0.229162, 0, 0.973388, -17.9342, 0, 31.2915 )
-mesh = ExtResource( 11 )
+[node name="GenericTree26" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( -0.773114, 0, -0.917048, 0, 1.19945, 0, 0.917048, 0, -0.773114, 28.8408, 0, -26.0476 )
+mesh = ExtResource( 14 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree23" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.35508, 0, -0.934836, 0, 1, 0, 0.934836, 0, 0.35508, -9.65189, 1.90735e-06, 28.1263 )
-mesh = ExtResource( 11 )
+[node name="GenericTree27" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( -0.756633, 0, 0.732435, 0, 1.05307, 0, -0.732435, 0, -0.756633, 33.2403, -3.8147e-06, -17.7624 )
+mesh = ExtResource( 14 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree24" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.696623, 0, 0.717437, 0, 1, 0, -0.717437, 0, -0.696623, -3.29874, 1.90735e-06, 28.3016 )
-mesh = ExtResource( 11 )
+[node name="GenericTree28" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 17 )]
+transform = Transform( 0.649245, 0, 1.09965, 0, 1.27701, 0, -1.09965, 0, 0.649245, 24.9504, 0, -31.7838 )
+mesh = ExtResource( 14 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree25" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.217915, 0, -0.975968, 0, 1, 0, 0.975968, 0, -0.217915, 14.6096, 1.90735e-06, 26.2556 )
-mesh = ExtResource( 11 )
+[node name="GrounPlanks01" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 26 )]
+transform = Transform( 1.10264, 0, 0.185082, 0, 1.11807, 0, -0.185082, 0, 1.10264, -6.47477, 1.90735e-06, 7.28591 )
+mesh = ExtResource( 43 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree26" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.246905, 0, -0.96904, 0, 1, 0, 0.96904, 0, -0.246905, 9.66011, 0, 29.2574 )
-mesh = ExtResource( 11 )
+[node name="GrounPlanks03" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 26 )]
+transform = Transform( 0.592583, 0, -0.811304, 0, 1.00467, 0, 0.811304, 0, 0.592583, 3.91256, -1.90735e-06, 13.0699 )
+mesh = ExtResource( 43 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree27" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.354503, 0, 0.935055, 0, 1, 0, -0.935055, 0, 0.354503, 2.63574, -1.90735e-06, 31.4263 )
-mesh = ExtResource( 11 )
+[node name="GroundPlanks02" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 22 )]
+transform = Transform( -0.124497, 0, -1.01555, 0, 1.02316, 0, 1.01555, 0, -0.124497, -2.52663, 0, 14.8362 )
+mesh = ExtResource( 28 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree28" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.874189, 0, 0.485586, 0, 1, 0, -0.485586, 0, -0.874189, 10.6183, -1.90735e-06, 22.5786 )
-mesh = ExtResource( 11 )
+[node name="WoodPile01" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 38 )]
+transform = Transform( -0.99997, 0, -0.00780065, 0, 1, 0, 0.00780065, 0, -0.99997, -12.7988, 3.8147e-06, 4.83969 )
+mesh = ExtResource( 40 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree29" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.955613, 0, -0.294625, 0, 1, 0, 0.294625, 0, 0.955613, 17.9667, 0, 18.6363 )
-mesh = ExtResource( 11 )
+[node name="WoodPile02" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 36 )]
+transform = Transform( 0.396781, 0, -0.917913, 0, 1, 0, 0.917913, 0, 0.396781, 4.79555, 9.53674e-07, 8.21765 )
+mesh = ExtResource( 39 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree30" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.606729, 0, 0.794909, 0, 1, 0, -0.794909, 0, 0.606729, -23.3484, -3.8147e-06, 11.4932 )
-mesh = ExtResource( 11 )
+[node name="WoodPile03" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 35 )]
+transform = Transform( 0.863797, 0, -0.50384, 0, 1, 0, 0.50384, 0, 0.863797, 2.94757, 0, 6.04652 )
+mesh = ExtResource( 37 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree31" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.948815, 0, -0.315832, 0, 1, 0, 0.315832, 0, 0.948815, -24.4397, -1.90735e-06, 6.7766 )
-mesh = ExtResource( 11 )
+[node name="BushCluster03" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 32 )]
+transform = Transform( -0.426069, 0, 0.278299, 0, 0.508906, 0, -0.278299, 0, -0.426069, -27.1773, 7.62939e-06, 49.2632 )
+mesh = ExtResource( 29 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree32" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.712683, 0, -0.701486, 0, 1, 0, 0.701486, 0, -0.712683, -27.4671, -1.90735e-06, 8.72865 )
-mesh = ExtResource( 11 )
+[node name="BushCluster05" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 32 )]
+transform = Transform( -0.138336, 0, -0.429471, 0, 0.4512, 0, 0.429471, 0, -0.138336, -15.7365, 3.8147e-06, 48.5108 )
+mesh = ExtResource( 29 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree33" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( 0.198927, 0, -0.980014, 0, 1, 0, 0.980014, 0, 0.198927, -25.2583, -3.8147e-06, 15.7339 )
-mesh = ExtResource( 11 )
+[node name="BushCluster07" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 32 )]
+transform = Transform( 0.204983, 0, -0.486367, 0, 0.527798, 0, 0.486367, 0, 0.204983, -8.08966, 0, 47.2739 )
+mesh = ExtResource( 29 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree34" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.25428, 0, -0.967131, 0, 1, 0, 0.967131, 0, -0.25428, -22.7532, -1.90735e-06, 18.279 )
-mesh = ExtResource( 11 )
+[node name="BushCluster14" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 32 )]
+transform = Transform( -0.257913, 0, -0.330666, 0, 0.419355, 0, 0.330666, 0, -0.257913, 0.212019, 0, 47.7748 )
+mesh = ExtResource( 29 )
 material/0 = ExtResource( 12 )
 
-[node name="GenericTree35" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 10 )]
-transform = Transform( -0.396872, 0, -0.917874, 0, 1, 0, 0.917874, 0, -0.396872, -18.2912, 0, 19.1513 )
-mesh = ExtResource( 11 )
+[node name="BushCluster15" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 27 )]
+transform = Transform( -0.411635, 0, 0.0368978, 0, 0.413285, 0, -0.0368978, 0, -0.411635, 9.13626, 3.8147e-06, 46.7927 )
+mesh = ExtResource( 44 )
+material/0 = ExtResource( 12 )
+
+[node name="BushCluster16" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 33 )]
+transform = Transform( -0.379822, 0, -0.452852, 0, 0.59105, 0, 0.452852, 0, -0.379822, -21.0271, -3.8147e-06, 49.3781 )
+mesh = ExtResource( 41 )
+material/0 = ExtResource( 12 )
+
+[node name="GenericTree09" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 0.88827, 0, -1.14346, 0, 1.44794, 0, 1.14346, 0, 0.88827, -31.3077, 3.8147e-06, 40.9934 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+
+[node name="GenericTree10" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.133257, 0, -1.54201, 0, 1.54776, 0, 1.54201, 0, -0.133257, -22.6386, 3.8147e-06, 44.75 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+
+[node name="GenericTree11" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.534576, 0, 1.46827, 0, 1.56255, 0, -1.46827, 0, -0.534576, -0.905366, 3.8147e-06, 42.9536 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+
+[node name="GenericTree12" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( 1.40729, 0, 0.576383, 0, 1.52075, 0, -0.576383, 0, 1.40729, -18.3611, 3.8147e-06, 43.4991 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+
+[node name="GenericTree19" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 18 )]
+transform = Transform( -0.0597265, 0, -1.24302, 0, 1.24445, 0, 1.24302, 0, -0.0597265, 15.2029, 3.8147e-06, 39.0873 )
+mesh = ExtResource( 21 )
+material/0 = ExtResource( 12 )
+
+[node name="TreeLarge01" type="MeshInstance" parent="Scatter3D" instance=ExtResource( 45 )]
+transform = Transform( -0.299031, 0, -0.400725, 0, 0.5, 0, 0.400725, 0, -0.299031, -5.86578, 1.90735e-06, 22.4542 )
+mesh = ExtResource( 46 )
 material/0 = ExtResource( 12 )

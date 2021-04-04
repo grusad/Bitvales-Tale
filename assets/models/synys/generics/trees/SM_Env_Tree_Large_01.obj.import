@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Env_Tree_Large_01.obj-25a31e0819ab3b2c2071a7d8b9947e97.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Env_Tree_Large_01.obj-25a31e0819ab3b2c2071a7d8b9947e97.mesh" ]
+
+source_file="res://assets/models/synys/generics/trees/SM_Env_Tree_Large_01.obj"
+dest_files=[ "res://.import/SM_Env_Tree_Large_01.obj-25a31e0819ab3b2c2071a7d8b9947e97.mesh", "res://.import/SM_Env_Tree_Large_01.obj-25a31e0819ab3b2c2071a7d8b9947e97.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 
-const Scatter3D = preload("res://addons/zylann.scatter/scatter3d.gd")
+var Scatter3D = preload("res://addons/zylann.scatter/scatter3d.gd")
 const PaletteControl = preload("res://addons/zylann.scatter/tools/palette.tscn")
 const Util = preload("res://addons/zylann.scatter/tools/util.gd")
 
@@ -173,7 +173,8 @@ func _physics_process(delta):
 					if not too_close:
 						var instance = _pattern.instance()
 						instance.translation = pos
-						instance.rotate_y(rand_range(-PI, PI))			
+						instance.rotate_y(rand_range(-PI, PI))
+						instance.scale *= rand_range(_node.min_scale, _node.max_scale)
 						_node.add_child(instance)
 						instance.owner = get_editor_interface().get_edited_scene_root()
 						_placed_instances.append(instance)
