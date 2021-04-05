@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/tiles/grid_tiles.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://src/PlayerCharacter.tscn" type="PackedScene" id=2]
@@ -8,37 +8,8 @@
 [ext_resource path="res://src/Level.gd" type="Script" id=6]
 [ext_resource path="res://src/Debug.gd" type="Script" id=7]
 [ext_resource path="res://src/CommandLine.gd" type="Script" id=8]
-[ext_resource path="res://src/world_objects/houses/FarmHouse01.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff01.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff03.tscn" type="PackedScene" id=11]
-[ext_resource path="res://addons/scatter/src/core/scatter.gd" type="Script" id=12]
-[ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=13]
-[ext_resource path="res://addons/scatter/src/core/scatter_item.gd" type="Script" id=14]
-[ext_resource path="res://assets/materials/01_A.material" type="Material" id=15]
-[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff04.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/world_objects/generics/trees/GenericTree02.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/world_objects/generics/trees/GenericTree01.tscn" type="PackedScene" id=18]
-[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff02.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/world_objects/props/Plank03.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/models/synys/generics/grass/SM_Env_Grass_Tuft_02.obj" type="ArrayMesh" id=21]
-[ext_resource path="res://src/world_objects/props/GroundPlanks02.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/world_objects/generics/cliffs/RockCliff05.tscn" type="PackedScene" id=23]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster06.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/world_objects/props/Plank01.tscn" type="PackedScene" id=25]
-[ext_resource path="res://src/world_objects/props/GrounPlanks01.tscn" type="PackedScene" id=26]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster02.tscn" type="PackedScene" id=27]
-[ext_resource path="res://assets/models/synys/generics/grass/SM_Env_Grass_Tuft_01.obj" type="ArrayMesh" id=28]
-[ext_resource path="res://assets/models/synys/generics/grass/SM_Env_Grass_Tuft_03.obj" type="ArrayMesh" id=29]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster03.tscn" type="PackedScene" id=30]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster04.tscn" type="PackedScene" id=31]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster01.tscn" type="PackedScene" id=32]
-[ext_resource path="res://src/world_objects/generics/bushes/BushCluster05.tscn" type="PackedScene" id=33]
-[ext_resource path="res://src/world_objects/props/Plank02.tscn" type="PackedScene" id=34]
-[ext_resource path="res://src/world_objects/props/WoodPile03.tscn" type="PackedScene" id=35]
-[ext_resource path="res://src/world_objects/props/WoodPile02.tscn" type="PackedScene" id=36]
-[ext_resource path="res://src/world_objects/props/WoodPile01.tscn" type="PackedScene" id=38]
-[ext_resource path="res://src/world_objects/generics/trees/TreeLarge02.tscn" type="PackedScene" id=42]
-[ext_resource path="res://src/world_objects/generics/trees/TreeLarge01.tscn" type="PackedScene" id=45]
+[ext_resource path="res://src/entities/world_objects/houses/FarmHouse01.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/entities/world_objects/generics_enviroments/trees/GenericTree01.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.431373, 0.760784, 0.937255, 1 )
@@ -52,7 +23,6 @@ background_sky = SubResource( 1 )
 fog_color = Color( 0.733333, 0.882353, 1, 1 )
 fog_depth_begin = 50.0
 fog_depth_end = 120.0
-ssao_enabled = true
 glow_bloom = 0.03
 glow_blend_mode = 1
 adjustment_enabled = true
@@ -75,30 +45,6 @@ size = Vector2( 200, 200 )
 [sub_resource type="ConcavePolygonShape" id=6]
 data = PoolVector3Array( 50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50 )
 
-[sub_resource type="Curve3D" id=7]
-_data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -1.37276, 0, 26.8976, 0, 0, 0, 0, 0, 0, 3.44048, 0, 20.4972, 0, 0, 0, 0, 0, 0, -12.8538, 0, 19.7189, 0, 0, 0, 0, 0, 0, -7.03472, 0, 26.5482, 0, 0, 0, 0, 0, 0, -1.37276, 0, 26.8976 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
-}
-
-[sub_resource type="MultiMesh" id=8]
-transform_format = 1
-instance_count = 7
-mesh = ExtResource( 28 )
-transform_array = PoolVector3Array( -0.246307, 0, -1.17677, 0, 1.20227, 0, 1.17677, 0, -0.246307, -10.1436, 0, 23.042, -1.47913, 0, 0.342875, 0, 1.51835, 0, -0.342875, 0, -1.47913, -2.85964, 0, 19.4818, -1.29544, 0, 0.911172, 0, 1.58379, 0, -0.911172, 0, -1.29544, -3.67798, 0, 24.5363, 1.24046, 0, -0.781261, 0, 1.46599, 0, 0.781261, 0, 1.24046, -4.54658, 0, 24.5267, 0.82306, 0, -0.700108, 0, 1.08055, 0, 0.700108, 0, 0.82306, -2.14258, 0, 21.9141, -0.843394, 0, 0.873086, 0, 1.21392, 0, -0.873086, 0, -0.843394, -5.98571, 0, 22.9786, -0.161665, 0, -1.08341, 0, 1.0954, 0, 1.08341, 0, -0.161665, -5.47606, 0, 27.1107 )
-
-[sub_resource type="MultiMesh" id=9]
-transform_format = 1
-instance_count = 7
-mesh = ExtResource( 21 )
-transform_array = PoolVector3Array( 1.38264, 0, 1.20092, 0, 1.83136, 0, -1.20092, 0, 1.38264, -3.87608, 0, 22.7642, 0.914546, 0, 1.40672, 0, 1.67787, 0, -1.40672, 0, 0.914546, -3.51979, 0, 24.2036, -0.516656, 0, 1.21222, 0, 1.31773, 0, -1.21222, 0, -0.516656, -0.807802, 0, 22.4147, 1.31861, 0, 0.758515, 0, 1.52121, 0, -0.758515, 0, 1.31861, 1.2796, 0, 22.9604, -1.10254, 0, 0.567661, 0, 1.2401, 0, -0.567661, 0, -1.10254, -7.1464, 0, 21.0464, -0.10277, 0, -1.73775, 0, 1.74079, 0, 1.73775, 0, -0.10277, 1.13766, 0, 25.4003, 0.592179, 0, -0.990773, 0, 1.15426, 0, 0.990773, 0, 0.592179, -7.33307, 0, 23.932 )
-
-[sub_resource type="MultiMesh" id=10]
-transform_format = 1
-instance_count = 7
-mesh = ExtResource( 29 )
-transform_array = PoolVector3Array( -1.43982, 0, -0.222732, 0, 1.45694, 0, 0.222732, 0, -1.43982, -6.50403, 0, 20.7401, -0.936386, 0, 1.3569, 0, 1.64864, 0, -1.3569, 0, -0.936386, 1.15466, 0, 23.6215, -0.161051, 0, 1.89044, 0, 1.89729, 0, -1.89044, 0, -0.161051, 0.251403, 0, 20.1021, 1.56201, 0, -0.0783551, 0, 1.56397, 0, 0.0783551, 0, 1.56201, -3.91451, 0, 24.2465, -1.12063, 0, 0.229048, 0, 1.1438, 0, -0.229048, 0, -1.12063, -1.20384, 0, 25.2698, 1.00039, 0, -1.29686, 0, 1.63788, 0, 1.29686, 0, 1.00039, -6.77995, 0, 20.8926, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-
 [node name="TestWorld" type="Spatial"]
 
 [node name="ScatterContainer" type="Spatial" parent="."]
@@ -107,7 +53,7 @@ transform_array = PoolVector3Array( -1.43982, 0, -0.222732, 0, 1.45694, 0, 0.222
 visible = false
 mesh_library = ExtResource( 1 )
 data = {
-"cells": PoolIntArray( 2, 0, 1, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 1, 7, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 0, 65533, 0, 0, 65534, 0, 1, 0, 1, 1, 2, 1, 1, 3, 1, 0, 4, 1, 0, 5, 1, 1, 6, 1, 1, 65529, 1, 1, 65530, 1, 1, 65531, 1, 1, 65532, 1, 0, 65533, 1, 0, 65534, 1, 1, 65535, 1, 1, 0, 2, 1, 1, 2, 1, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 1, 6, 2, 1, 65529, 2, 1, 65530, 2, 1, 65531, 2, 1, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 1, 5, 3, 1, 65529, 3, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 4, 0, 1, 4, 536870912, 2, 4, 1073741825, 3, 4, 1, 4, 4, 1, 65530, 4, 1073741825, 65531, 4, 1073741825, 65532, 4, 1, 65533, 4, 536870913, 65534, 4, 536870912, 65535, 4, 536870912, 0, 5, 536870913, 1, 5, 536870913, 2, 5, 536870913, 65530, 5, 536870913, 65531, 5, 536870913, 65532, 5, 536870913, 65533, 5, 536870913, 65534, 5, 1, 65535, 5, 1, 65534, 65520, 1, 65535, 65520, 1, 0, 65521, 1, 1, 65521, 1, 2, 65521, 1, 65530, 65521, 1, 65531, 65521, 1, 65532, 65521, 1, 65533, 65521, 1, 65534, 65521, 1, 65535, 65521, 1, 0, 65522, 1, 1, 65522, 1, 2, 65522, 1, 3, 65522, 1, 65528, 65522, 1, 65529, 65522, 536870913, 65530, 65522, 536870913, 65531, 65522, 536870913, 65532, 65522, 1, 65533, 65522, 536870913, 65534, 65522, 1, 65535, 65522, 1, 0, 65523, 536870912, 1, 65523, 536870913, 2, 65523, 536870913, 3, 65523, 536870913, 4, 65523, 536870913, 5, 65523, 536870913, 65528, 65523, 536870913, 65529, 65523, 536870913, 65530, 65523, 0, 65531, 65523, 0, 65532, 65523, 0, 65533, 65523, 536870912, 65534, 65523, 536870912, 65535, 65523, 536870912, 0, 65524, 536870912, 1, 65524, 536870912, 2, 65524, 0, 3, 65524, 536870912, 4, 65524, 536870913, 5, 65524, 536870913, 6, 65524, 536870913, 7, 65524, 536870913, 65527, 65524, 536870913, 65528, 65524, 536870913, 65529, 65524, 536870912, 65530, 65524, 536870912, 65531, 65524, 0, 65532, 65524, 0, 65533, 65524, 0, 65534, 65524, 0, 65535, 65524, 0, 0, 65525, 536870912, 1, 65525, 536870912, 2, 65525, 536870912, 3, 65525, 536870912, 4, 65525, 536870912, 5, 65525, 0, 6, 65525, 1, 7, 65525, 1, 8, 65525, 1, 9, 65525, 536870913, 65526, 65525, 1, 65527, 65525, 1, 65528, 65525, 0, 65529, 65525, 0, 65530, 65525, 0, 65531, 65525, 536870912, 65532, 65525, 0, 65533, 65525, 0, 65534, 65525, 0, 65535, 65525, 0, 0, 65526, 536870912, 1, 65526, 0, 2, 65526, 0, 3, 65526, -1073741824, 4, 65526, 536870912, 5, 65526, 0, 6, 65526, 0, 7, 65526, 536870913, 8, 65526, 1, 9, 65526, 536870913, 10, 65526, 536870913, 65526, 65526, 1, 65527, 65526, 1, 65528, 65526, 0, 65529, 65526, 536870912, 65530, 65526, 0, 65531, 65526, 0, 65532, 65526, 0, 65533, 65526, 0, 65534, 65526, 1073741824, 65535, 65526, 536870912, 0, 65527, 0, 1, 65527, -1073741824, 2, 65527, 0, 3, 65527, 0, 4, 65527, -1073741824, 5, 65527, 0, 6, 65527, -1073741824, 7, 65527, 0, 8, 65527, 0, 9, 65527, -1073741823, 10, 65527, 1, 65526, 65527, 1, 65527, 65527, 1073741825, 65528, 65527, 0, 65529, 65527, 536870912, 65530, 65527, 0, 65531, 65527, 0, 65532, 65527, 1610612736, 65533, 65527, 0, 65534, 65527, 0, 65535, 65527, 0, 0, 65528, 536870912, 1, 65528, 0, 2, 65528, 0, 3, 65528, 0, 4, 65528, 0, 5, 65528, 536870912, 6, 65528, 0, 7, 65528, 0, 8, 65528, -1073741824, 9, 65528, 0, 10, 65528, 1, 11, 65528, -1073741823, 65526, 65528, 536870913, 65527, 65528, 1, 65528, 65528, -1073741824, 65529, 65528, 0, 65530, 65528, 0, 65531, 65528, -1073741824, 65532, 65528, 0, 65533, 65528, 0, 65534, 65528, -1073741824, 65535, 65528, 536870912, 0, 65529, 0, 1, 65529, -1073741824, 2, 65529, 0, 3, 65529, 0, 4, 65529, -1073741824, 5, 65529, 0, 6, 65529, 0, 7, 65529, 536870912, 8, 65529, -1073741824, 9, 65529, 536870912, 10, 65529, 536870913, 11, 65529, 536870913, 65526, 65529, 536870913, 65527, 65529, 1, 65528, 65529, 536870912, 65529, 65529, 536870912, 65530, 65529, 536870912, 65531, 65529, 536870912, 65532, 65529, 536870912, 65533, 65529, 0, 65534, 65529, 0, 65535, 65529, 0, 0, 65530, 536870912, 1, 65530, 0, 2, 65530, 0, 3, 65530, 0, 4, 65530, 536870912, 5, 65530, 536870912, 6, 65530, 536870912, 7, 65530, 0, 8, 65530, 0, 9, 65530, 536870912, 10, 65530, 536870913, 11, 65530, 536870913, 65526, 65530, 1, 65527, 65530, 536870913, 65528, 65530, 536870912, 65529, 65530, 0, 65530, 65530, 0, 65531, 65530, 536870912, 65532, 65530, 536870913, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 3, 65531, 0, 4, 65531, 0, 5, 65531, 0, 6, 65531, 0, 7, 65531, 0, 8, 65531, 0, 9, 65531, 0, 10, 65531, 1, 65526, 65531, 1, 65527, 65531, 1, 65528, 65531, 0, 65529, 65531, 0, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 5, 65532, 0, 6, 65532, 0, 7, 65532, 0, 8, 65532, 0, 9, 65532, 0, 10, 65532, 1, 65527, 65532, 1, 65528, 65532, 1, 65529, 65532, 0, 65530, 65532, 1, 65531, 65532, 1, 65532, 65532, 1, 65533, 65532, 1, 65534, 65532, 0, 65535, 65532, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 1, 6, 65533, 1, 7, 65533, 0, 8, 65533, 0, 9, 65533, 1, 10, 65533, 1, 65528, 65533, 1, 65529, 65533, 1, 65530, 65533, 1, 65531, 65533, 1, 65532, 65533, 1, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 3, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 1, 9, 65534, 1, 65528, 65534, 1, 65529, 65534, 1, 65530, 65534, 1, 65531, 65534, 1, 65532, 65534, 1, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 2, 65535, 1, 3, 65535, 0, 4, 65535, 0, 5, 65535, 0, 6, 65535, 1, 7, 65535, 1, 65529, 65535, 1, 65530, 65535, 1, 65531, 65535, 1, 65532, 65535, 0, 65533, 65535, 0, 65534, 65535, 1, 65535, 65535, 1 )
+"cells": PoolIntArray( 2, 0, 1, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 1, 7, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 0, 65533, 0, 0, 65534, 0, 1, 0, 1, 1, 2, 1, 1, 3, 1, 0, 4, 1, 0, 5, 1, 1, 6, 1, 1, 65529, 1, 1, 65530, 1, 1, 65531, 1, 1, 65532, 1, 0, 65533, 1, 0, 65534, 1, 1, 65535, 1, 1, 0, 2, 1, 1, 2, 1, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 1, 6, 2, 1, 65529, 2, 1, 65530, 2, 1, 65531, 2, 1, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 1, 5, 3, 1, 65529, 3, 1, 65530, 3, 1, 65531, 3, 1, 65532, 3, 1, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 4, 0, 1, 4, 0, 2, 4, 1, 3, 4, 1, 4, 4, 1, 65530, 4, 1, 65531, 4, 1, 65532, 4, 1, 65533, 4, 1, 65534, 4, 0, 65535, 4, 0, 0, 5, 1, 1, 5, 1, 2, 5, 1, 65530, 5, 1, 65531, 5, 1, 65532, 5, 1, 65533, 5, 1, 65534, 5, 1, 65535, 5, 1, 65534, 65520, 1, 65535, 65520, 1, 0, 65521, 1, 1, 65521, 1, 2, 65521, 1, 65530, 65521, 1, 65531, 65521, 1, 65532, 65521, 1, 65533, 65521, 1, 65534, 65521, 1, 65535, 65521, 1, 0, 65522, 1, 1, 65522, 1, 2, 65522, 1, 3, 65522, 1, 65528, 65522, 1, 65529, 65522, 1, 65530, 65522, 1, 65531, 65522, 1, 65532, 65522, 1, 65533, 65522, 1, 65534, 65522, 1, 65535, 65522, 1, 0, 65523, 0, 1, 65523, 1, 2, 65523, 1, 3, 65523, 1, 4, 65523, 1, 5, 65523, 1, 65528, 65523, 1, 65529, 65523, 1, 65530, 65523, 0, 65531, 65523, 0, 65532, 65523, 0, 65533, 65523, 0, 65534, 65523, 0, 65535, 65523, 0, 0, 65524, 0, 1, 65524, 0, 2, 65524, 0, 3, 65524, 0, 4, 65524, 1, 5, 65524, 1, 6, 65524, 1, 7, 65524, 1, 65527, 65524, 1, 65528, 65524, 1, 65529, 65524, 0, 65530, 65524, 0, 65531, 65524, 0, 65532, 65524, 0, 65533, 65524, 0, 65534, 65524, 0, 65535, 65524, 0, 0, 65525, 0, 1, 65525, 0, 2, 65525, 0, 3, 65525, 0, 4, 65525, 0, 5, 65525, 0, 6, 65525, 1, 7, 65525, 1, 8, 65525, 1, 9, 65525, 1, 65526, 65525, 1, 65527, 65525, 1, 65528, 65525, 0, 65529, 65525, 0, 65530, 65525, 0, 65531, 65525, 0, 65532, 65525, 0, 65533, 65525, 0, 65534, 65525, 0, 65535, 65525, 0, 0, 65526, 0, 1, 65526, 0, 2, 65526, 0, 3, 65526, 0, 4, 65526, 0, 5, 65526, 0, 6, 65526, 0, 7, 65526, 1, 8, 65526, 1, 9, 65526, 1, 10, 65526, 1, 65526, 65526, 1, 65527, 65526, 1, 65528, 65526, 0, 65529, 65526, 0, 65530, 65526, 0, 65531, 65526, 0, 65532, 65526, 0, 65533, 65526, 0, 65534, 65526, 0, 65535, 65526, 0, 0, 65527, 0, 1, 65527, 0, 2, 65527, 0, 3, 65527, 0, 4, 65527, 0, 5, 65527, 0, 6, 65527, 0, 7, 65527, 0, 8, 65527, 0, 9, 65527, 1, 10, 65527, 1, 65526, 65527, 1, 65527, 65527, 1, 65528, 65527, 0, 65529, 65527, 0, 65530, 65527, 0, 65531, 65527, 0, 65532, 65527, 0, 65533, 65527, 0, 65534, 65527, 0, 65535, 65527, 0, 0, 65528, 0, 1, 65528, 0, 2, 65528, 0, 3, 65528, 0, 4, 65528, 0, 5, 65528, 0, 6, 65528, 0, 7, 65528, 0, 8, 65528, 0, 9, 65528, 0, 10, 65528, 1, 11, 65528, 1, 65526, 65528, 1, 65527, 65528, 1, 65528, 65528, 0, 65529, 65528, 0, 65530, 65528, 0, 65531, 65528, 0, 65532, 65528, 0, 65533, 65528, 0, 65534, 65528, 0, 65535, 65528, 0, 0, 65529, 0, 1, 65529, 0, 2, 65529, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 6, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 10, 65529, 1, 11, 65529, 1, 65526, 65529, 1, 65527, 65529, 1, 65528, 65529, 0, 65529, 65529, 0, 65530, 65529, 0, 65531, 65529, 0, 65532, 65529, 0, 65533, 65529, 0, 65534, 65529, 0, 65535, 65529, 0, 0, 65530, 0, 1, 65530, 0, 2, 65530, 0, 3, 65530, 0, 4, 65530, 0, 5, 65530, 0, 6, 65530, 0, 7, 65530, 0, 8, 65530, 0, 9, 65530, 0, 10, 65530, 1, 11, 65530, 1, 65526, 65530, 1, 65527, 65530, 1, 65528, 65530, 0, 65529, 65530, 0, 65530, 65530, 0, 65531, 65530, 0, 65532, 65530, 1, 65533, 65530, 1, 65534, 65530, 1, 65535, 65530, 1, 0, 65531, 0, 1, 65531, 0, 2, 65531, 0, 3, 65531, 0, 4, 65531, 0, 5, 65531, 0, 6, 65531, 0, 7, 65531, 0, 8, 65531, 0, 9, 65531, 0, 10, 65531, 1, 65526, 65531, 1, 65527, 65531, 1, 65528, 65531, 0, 65529, 65531, 0, 65530, 65531, 1, 65531, 65531, 1, 65532, 65531, 1, 65533, 65531, 1, 65534, 65531, 1, 65535, 65531, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 5, 65532, 0, 6, 65532, 0, 7, 65532, 0, 8, 65532, 0, 9, 65532, 0, 10, 65532, 1, 65527, 65532, 1, 65528, 65532, 1, 65529, 65532, 0, 65530, 65532, 1, 65531, 65532, 1, 65532, 65532, 1, 65533, 65532, 1, 65534, 65532, 0, 65535, 65532, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 4, 65533, 0, 5, 65533, 1, 6, 65533, 1, 7, 65533, 0, 8, 65533, 0, 9, 65533, 1, 10, 65533, 1, 65528, 65533, 1, 65529, 65533, 1, 65530, 65533, 1, 65531, 65533, 1, 65532, 65533, 1, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, 1, 1, 65534, 1, 2, 65534, 1, 3, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 1, 9, 65534, 1, 65528, 65534, 1, 65529, 65534, 1, 65530, 65534, 1, 65531, 65534, 1, 65532, 65534, 1, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 2, 65535, 1, 3, 65535, 0, 4, 65535, 0, 5, 65535, 0, 6, 65535, 1, 7, 65535, 1, 65529, 65535, 1, 65530, 65535, 1, 65531, 65535, 1, 65532, 65535, 0, 65533, 65535, 0, 65534, 65535, 1, 65535, 65535, 1 )
 }
 script = ExtResource( 6 )
 __meta__ = {
@@ -205,9 +151,11 @@ text = "MaterialChanges: 0"
 
 [node name="FarmHouse01" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -1 )
+visible = false
 
 [node name="FarmHouse02" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 10, 0, 7 )
+visible = false
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
@@ -220,233 +168,4 @@ collision_mask = 0
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
 shape = SubResource( 6 )
 
-[node name="Generics" type="Spatial" parent="Ground"]
-
-[node name="Scatter" type="Path" parent="Ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1 )
-curve = SubResource( 7 )
-script = ExtResource( 12 )
-modifier_stack = Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/core/modifier_stack.gd" ),"stack":[ Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/distribute_inside_random.gd" ),"enabled":true,"display_name":"Distribute Inside (Random)","category":"Distribute","warning":"","warning_ignore_no_transforms":true,"override_global_seed":false,"custom_seed":0.0,"instance_count":20,"_rng":Object(RandomNumberGenerator,"seed":-3786431931618182989,"script":null)
-)
-, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/randomize_transforms.gd" ),"enabled":true,"display_name":"Randomize Transforms","category":"Edit","warning":"","warning_ignore_no_transforms":false,"override_global_seed":false,"custom_seed":0,"local_space":true,"position":Vector3( 1, 0, 1 ),"rotation":Vector3( 0, 360, 0 ),"scale":Vector3( 1, 1, 1 ),"_rng":Object(RandomNumberGenerator,"seed":-1299058305409869385,"script":null)
-)
-, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/project_on_floor.gd" ),"enabled":false,"display_name":"Project On Floor","category":"Edit","warning":"","warning_ignore_no_transforms":false,"ray_length":10.0,"ray_offset":4.0,"remove_points_on_miss":true,"align_with_floor_normal":false,"invert_ray_direction":false,"floor_direction":Vector3( 0, -1, 0 ))
- ],"just_created":false,"undo_redo":Object(UndoRedo,"script":null)
-)
-
-
-[node name="ScatterItem" type="Spatial" parent="Ground/Scatter"]
-script = ExtResource( 14 )
-proportion = 100
-local_item_path = NodePath("")
-item_path = "res://src/world_objects/generics/grass/GrassTuft01.tscn"
-scale_modifier = 1.0
-ignore_initial_position = true
-ignore_initial_rotation = true
-ignore_initial_scale = true
-
-[node name="MultiMeshInstance" type="MultiMeshInstance" parent="Ground/Scatter/ScatterItem"]
-material_override = ExtResource( 15 )
-multimesh = SubResource( 8 )
-
-[node name="ScatterItem2" type="Spatial" parent="Ground/Scatter"]
-script = ExtResource( 14 )
-proportion = 100
-local_item_path = NodePath("")
-item_path = "res://src/world_objects/generics/grass/GrassTuft02.tscn"
-scale_modifier = 1.0
-ignore_initial_position = true
-ignore_initial_rotation = true
-ignore_initial_scale = true
-
-[node name="MultiMeshInstance" type="MultiMeshInstance" parent="Ground/Scatter/ScatterItem2"]
-material_override = ExtResource( 15 )
-multimesh = SubResource( 9 )
-
-[node name="ScatterItem3" type="Spatial" parent="Ground/Scatter"]
-script = ExtResource( 14 )
-proportion = 100
-local_item_path = NodePath("")
-item_path = "res://src/world_objects/generics/grass/GrassTuft03.tscn"
-scale_modifier = 1.0
-ignore_initial_position = true
-ignore_initial_rotation = true
-ignore_initial_scale = true
-
-[node name="MultiMeshInstance" type="MultiMeshInstance" parent="Ground/Scatter/ScatterItem3"]
-material_override = ExtResource( 15 )
-multimesh = SubResource( 10 )
-
-[node name="Scatter3D" type="Spatial" parent="."]
-script = ExtResource( 13 )
-_scenes = [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 34 ), ExtResource( 20 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 45 ), ExtResource( 42 ) ]
-min_scale = 0.5
-max_scale = 0.5
-
-[node name="GenericTree01" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.955613, 0, -0.294625, 0, 1, 0, 0.294625, 0, 0.955613, -20.5388, 0, 3.04649 )
-
-[node name="GenericTree02" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.606729, 0, 0.794909, 0, 1, 0, -0.794909, 0, 0.606729, -18.8026, 0, 6.70559 )
-
-[node name="GenericTree03" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( 0.948815, 0, -0.315832, 0, 1, 0, 0.315832, 0, 0.948815, -22.8773, 1.90735e-06, 6.62338 )
-
-[node name="GenericTree04" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.712683, 0, -0.701486, 0, 1, 0, 0.701486, 0, -0.712683, 10.8436, -3.8147e-06, 17.6151 )
-
-[node name="GenericTree05" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.198927, 0, -0.980014, 0, 1, 0, 0.980014, 0, 0.198927, 7.11358, -1.90735e-06, 21.2982 )
-
-[node name="GenericTree06" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.25428, 0, -0.967131, 0, 1, 0, 0.967131, 0, -0.25428, 12.0978, 0, 24.6208 )
-
-[node name="GenericTree07" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( -0.396872, 0, -0.917874, 0, 1, 0, 0.917874, 0, -0.396872, 12.4088, 0, 20.9087 )
-
-[node name="GenericTree08" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( 0.916823, 0, -0.399293, 0, 1, 0, 0.399293, 0, 0.916823, 9.00011, -1.90735e-06, 24.8068 )
-
-[node name="RockCliff07" parent="Scatter3D" instance=ExtResource( 16 )]
-transform = Transform( 0.572799, 0, -0.212037, 0, 0.610785, 0, 0.212037, 0, 0.572799, -41.7393, -3.8147e-06, 47.1988 )
-
-[node name="RockCliff08" parent="Scatter3D" instance=ExtResource( 23 )]
-transform = Transform( -0.595792, 0, -0.328394, 0, 0.680302, 0, 0.328394, 0, -0.595792, -46.7563, 0, -25.5476 )
-
-[node name="RockCliff09" parent="Scatter3D" instance=ExtResource( 23 )]
-transform = Transform( 0.640521, 0, -0.391863, 0, 0.750882, 0, 0.391863, 0, 0.640521, -25.6264, -3.8147e-06, -47.6363 )
-
-[node name="RockCliff03" parent="Scatter3D" instance=ExtResource( 11 )]
-transform = Transform( 0.338584, 0, -0.571664, 0, 0.664409, 0, 0.571664, 0, 0.338584, 28.7565, 7.62939e-06, -46.0613 )
-
-[node name="RockCliff10" parent="Scatter3D" instance=ExtResource( 11 )]
-transform = Transform( 0.415309, 0, -0.459554, 0, 0.619412, 0, 0.459554, 0, 0.415309, 47.0657, 7.62939e-06, -24.3627 )
-
-[node name="RockCliff12" parent="Scatter3D" instance=ExtResource( 11 )]
-transform = Transform( 0.546298, 0, -0.338987, 0, 0.642926, 0, 0.338987, 0, 0.546298, -47.4262, 0, 32.0272 )
-
-[node name="RockCliff13" parent="Scatter3D" instance=ExtResource( 16 )]
-transform = Transform( 0.586975, 0, -0.0865481, 0, 0.593322, 0, 0.0865481, 0, 0.586975, 23.7065, 0, 46.364 )
-
-[node name="BushCluster01" parent="Scatter3D" instance=ExtResource( 32 )]
-transform = Transform( 0.114245, 0, -0.676845, 0, 0.686419, 0, 0.676845, 0, 0.114245, -42.1968, -3.8147e-06, -17.6131 )
-
-[node name="BushCluster04" parent="Scatter3D" instance=ExtResource( 27 )]
-transform = Transform( -0.635142, 0, -0.143337, 0, 0.651115, 0, 0.143337, 0, -0.635142, -15.5832, 0, -48.046 )
-
-[node name="BushCluster08" parent="Scatter3D" instance=ExtResource( 30 )]
-transform = Transform( 0.499959, 0, 0.253775, 0, 0.560679, 0, -0.253775, 0, 0.499959, -48.8566, -3.8147e-06, 21.9866 )
-
-[node name="BushCluster09" parent="Scatter3D" instance=ExtResource( 30 )]
-transform = Transform( -0.120275, 0, -0.569252, 0, 0.581819, 0, 0.569252, 0, -0.120275, -41.9492, 0, -4.50737 )
-
-[node name="BushCluster10" parent="Scatter3D" instance=ExtResource( 30 )]
-transform = Transform( 0.143354, 0, 0.527779, 0, 0.546902, 0, -0.527779, 0, 0.143354, -46.8904, -3.8147e-06, 9.08217 )
-
-[node name="BushCluster11" parent="Scatter3D" instance=ExtResource( 31 )]
-transform = Transform( 0.248268, 0, 0.315834, 0, 0.401731, 0, -0.315834, 0, 0.248268, -48.2983, 0, -11.2134 )
-
-[node name="BushCluster12" parent="Scatter3D" instance=ExtResource( 24 )]
-transform = Transform( 0.0930204, 0, 0.329738, 0, 0.342608, 0, -0.329738, 0, 0.0930204, 35.4711, 3, -31.2335 )
-
-[node name="BushCluster13" parent="Scatter3D" instance=ExtResource( 24 )]
-transform = Transform( -0.326478, 0, -0.12117, 0, 0.348238, 0, 0.12117, 0, -0.326478, 38.8573, 3, -36.5995 )
-
-[node name="RockCliff04" parent="Scatter3D" instance=ExtResource( 16 )]
-transform = Transform( -0.400877, 0, 0.505891, 0, 0.645467, 0, -0.505891, 0, -0.400877, -38.4329, 7.62939e-06, -38.9508 )
-
-[node name="RockCliff05" parent="Scatter3D" instance=ExtResource( 16 )]
-transform = Transform( -0.459351, 0, 0.351952, 0, 0.578683, 0, -0.351952, 0, -0.459351, 38.9216, 0, -36.1973 )
-
-[node name="GenericTree13" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.561307, 0, 0.858847, 0, 1.026, 0, -0.858847, 0, 0.561307, -41.5121, 0, 17.4943 )
-
-[node name="GenericTree14" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.61859, 0, -0.874372, 0, 1.07106, 0, 0.874372, 0, -0.61859, -37.9757, -3.8147e-06, 4.91379 )
-
-[node name="GenericTree15" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.959513, 0, -0.862494, 0, 1.29018, 0, 0.862494, 0, 0.959513, -39.1078, 3.8147e-06, 21.5395 )
-
-[node name="GenericTree16" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 1.18462, 0, 0.516675, 0, 1.29239, 0, -0.516675, 0, 1.18462, -38.6041, 0, 16.6914 )
-
-[node name="GenericTree17" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.0942661, 0, 1.1772, 0, 1.18096, 0, -1.1772, 0, -0.0942661, -33.2023, 3.8147e-06, -4.73763 )
-
-[node name="GenericTree18" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 1.04103, 0, -0.360549, 0, 1.1017, 0, 0.360549, 0, 1.04103, -30.3592, 3.8147e-06, -11.5049 )
-
-[node name="GenericTree21" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 1.03132, 0, -0.0984849, 0, 1.03601, 0, 0.0984849, 0, 1.03132, -28.7241, 0, 38.941 )
-
-[node name="GenericTree23" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.732671, 0, 0.93377, 0, 1.1869, 0, -0.93377, 0, 0.732671, -22.2098, 0, -36.6502 )
-
-[node name="GenericTree24" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.0432452, 0, 1.21979, 0, 1.22055, 0, -1.21979, 0, -0.0432452, -24.425, 3.8147e-06, -33.6642 )
-
-[node name="GenericTree25" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( -0.0953598, 0, 1.05535, 0, 1.05965, 0, -1.05535, 0, -0.0953598, 26.3085, 0, -36.2297 )
-
-[node name="GenericTree26" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( -0.773114, 0, -0.917048, 0, 1.19945, 0, 0.917048, 0, -0.773114, 28.8408, 0, -26.0476 )
-
-[node name="GenericTree27" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( -0.756633, 0, 0.732435, 0, 1.05307, 0, -0.732435, 0, -0.756633, 33.2403, -3.8147e-06, -17.7624 )
-
-[node name="GenericTree28" parent="Scatter3D" instance=ExtResource( 17 )]
-transform = Transform( 0.649245, 0, 1.09965, 0, 1.27701, 0, -1.09965, 0, 0.649245, 24.9504, 0, -31.7838 )
-
-[node name="GrounPlanks01" parent="Scatter3D" instance=ExtResource( 26 )]
-transform = Transform( 1.10264, 0, 0.185082, 0, 1.11807, 0, -0.185082, 0, 1.10264, -6.47477, 1.90735e-06, 7.28591 )
-
-[node name="GrounPlanks03" parent="Scatter3D" instance=ExtResource( 26 )]
-transform = Transform( 0.592583, 0, -0.811304, 0, 1.00467, 0, 0.811304, 0, 0.592583, 3.91256, -1.90735e-06, 13.0699 )
-
-[node name="GroundPlanks02" parent="Scatter3D" instance=ExtResource( 22 )]
-transform = Transform( -0.124497, 0, -1.01555, 0, 1.02316, 0, 1.01555, 0, -0.124497, -2.52663, 0, 14.8362 )
-
-[node name="WoodPile01" parent="Scatter3D" instance=ExtResource( 38 )]
-transform = Transform( -0.99997, 0, -0.00780065, 0, 1, 0, 0.00780065, 0, -0.99997, -12.7988, 3.8147e-06, 4.83969 )
-
-[node name="WoodPile02" parent="Scatter3D" instance=ExtResource( 36 )]
-transform = Transform( 0.396781, 0, -0.917913, 0, 1, 0, 0.917913, 0, 0.396781, 4.79555, 9.53674e-07, 8.21765 )
-
-[node name="WoodPile03" parent="Scatter3D" instance=ExtResource( 35 )]
-transform = Transform( 0.863797, 0, -0.50384, 0, 1, 0, 0.50384, 0, 0.863797, 2.94757, 0, 6.04652 )
-
-[node name="BushCluster03" parent="Scatter3D" instance=ExtResource( 32 )]
-transform = Transform( -0.426069, 0, 0.278299, 0, 0.508906, 0, -0.278299, 0, -0.426069, -27.1773, 7.62939e-06, 49.2632 )
-
-[node name="BushCluster05" parent="Scatter3D" instance=ExtResource( 32 )]
-transform = Transform( -0.138336, 0, -0.429471, 0, 0.4512, 0, 0.429471, 0, -0.138336, -15.7365, 3.8147e-06, 48.5108 )
-
-[node name="BushCluster07" parent="Scatter3D" instance=ExtResource( 32 )]
-transform = Transform( 0.204983, 0, -0.486367, 0, 0.527798, 0, 0.486367, 0, 0.204983, -8.08966, 0, 47.2739 )
-
-[node name="BushCluster14" parent="Scatter3D" instance=ExtResource( 32 )]
-transform = Transform( -0.257913, 0, -0.330666, 0, 0.419355, 0, 0.330666, 0, -0.257913, 0.212019, 0, 47.7748 )
-
-[node name="BushCluster15" parent="Scatter3D" instance=ExtResource( 27 )]
-transform = Transform( -0.411635, 0, 0.0368978, 0, 0.413285, 0, -0.0368978, 0, -0.411635, 9.13626, 3.8147e-06, 46.7927 )
-
-[node name="BushCluster16" parent="Scatter3D" instance=ExtResource( 33 )]
-transform = Transform( -0.379822, 0, -0.452852, 0, 0.59105, 0, 0.452852, 0, -0.379822, -21.0271, -3.8147e-06, 49.3781 )
-
-[node name="GenericTree09" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 0.88827, 0, -1.14346, 0, 1.44794, 0, 1.14346, 0, 0.88827, -31.3077, 3.8147e-06, 40.9934 )
-
-[node name="GenericTree10" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.133257, 0, -1.54201, 0, 1.54776, 0, 1.54201, 0, -0.133257, -22.6386, 3.8147e-06, 44.75 )
-
-[node name="GenericTree11" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.534576, 0, 1.46827, 0, 1.56255, 0, -1.46827, 0, -0.534576, -0.905366, 3.8147e-06, 42.9536 )
-
-[node name="GenericTree12" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( 1.40729, 0, 0.576383, 0, 1.52075, 0, -0.576383, 0, 1.40729, -18.3611, 3.8147e-06, 43.4991 )
-
-[node name="GenericTree19" parent="Scatter3D" instance=ExtResource( 18 )]
-transform = Transform( -0.0597265, 0, -1.24302, 0, 1.24445, 0, 1.24302, 0, -0.0597265, 15.2029, 3.8147e-06, 39.0873 )
-
-[node name="TreeLarge01" parent="Scatter3D" instance=ExtResource( 45 )]
-transform = Transform( -0.299031, 0, -0.400725, 0, 0.5, 0, 0.400725, 0, -0.299031, -5.86578, 1.90735e-06, 22.4542 )
+[node name="GenericTree01" parent="." instance=ExtResource( 10 )]

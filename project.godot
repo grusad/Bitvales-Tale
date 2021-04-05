@@ -48,13 +48,9 @@ config/name="Unnamed"
 run/main_scene="res://src/TestWorld.tscn"
 config/icon="res://icon.png"
 
-[display]
-
-window/vsync/use_vsync=false
-
 [editor_plugins]
 
-enabled=PoolStringArray( "scatter", "zylann.scatter" )
+enabled=PoolStringArray( "zylann.scatter" )
 
 [importer_defaults]
 
@@ -85,12 +81,11 @@ walk={
 
 [layer_names]
 
-3d_physics/layer_1="World"
+3d_physics/layer_1="All"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Enemy"
+3d_physics/layer_4="Enviroment"
 
 [rendering]
 
-quality/shadows/filter_mode=2
-quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
