@@ -6,7 +6,7 @@ const WALK_SPEED = 6
 
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
-	parent.animation_tree["parameters/state/current"] = 1
+	parent.animation_tree["parameters/state/current"] = 2
 	
 func physics_process(delta):
 

@@ -5,7 +5,7 @@ const WALK_SPEED = 15
 
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
-	parent.animation_tree["parameters/state/current"] = 2
+	parent.animation_tree["parameters/state/current"] = 3
 	parent.collision_shape.translation.z = 0.67
 	parent.collision_shape.rotation_degrees.x = 22
 	

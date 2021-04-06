@@ -8,7 +8,7 @@ var movable = false
 
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
-	parent.animation_tree["parameters/state/current"] = 3
+	parent.animation_tree["parameters/state/current"] = 17
 	movable = true
 
 func exit_state():

@@ -21,6 +21,6 @@ func get_input_direction():
 		).normalized()
 		
 func get_hand():
-	return get_node("FemaleRider/Root/Skeleton/Hand")
+	return get_node("RiderNew/Root/Skeleton/RightHand")
 		
  
