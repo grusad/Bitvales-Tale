@@ -3,13 +3,21 @@ class_name KinematicEntity
 
 var velocity = Vector3()
 var states = []
+	
 
 func _physics_process(delta):
 	for state in states:
 		state.physics_process(delta)
 		state.process_unhandled_input(delta)
-	velocity = move_and_slide(velocity, Vector3.UP)
-	translation.y = 0
+		
+	if not is_on_floor() and not is_on_wall():
+		#velocity.y -= 5.0
+		pass
+	velocity.y = move_and_slide_with_snap(velocity, Vector3.DOWN * 32, Vector3.UP, true, 4, deg2rad(46)).y
+
+
+
+	
 
 func apply_movement(movement_direction, acceleration, max_speed, delta):
 	velocity = lerp(velocity, movement_direction * max_speed, acceleration * delta)

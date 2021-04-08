@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/materials/water.material" type="Material" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+material = ExtResource( 1 )
+size = Vector2( 15, 15 )
+subdivide_width = 30
+subdivide_depth = 30
+
+[node name="Water" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = null

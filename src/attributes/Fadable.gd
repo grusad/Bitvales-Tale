@@ -33,6 +33,7 @@ func fade_out():
 	mesh_instance.set_surface_material(0, material)
 	
 	if material is ShaderMaterial:
+		
 		tween.interpolate_property(material, "shader_param/albedo:a", 1.0, 0.6, 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 		tween.start()
 	

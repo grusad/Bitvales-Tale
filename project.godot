@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ResourceFormatLoader",
+"class": "HTerrainDataLoader",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
+}, {
+"base": "ResourceFormatSaver",
+"class": "HTerrainDataSaver",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
+}, {
 "base": "KinematicBody",
 "class": "KinematicEntity",
 "language": "GDScript",
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://src/states/State.gd"
 } ]
 _global_script_class_icons={
+"HTerrainDataLoader": "",
+"HTerrainDataSaver": "",
 "KinematicEntity": "",
 "Level": "",
 "MeleeWeapon": "",
@@ -45,12 +57,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Unnamed"
-run/main_scene="res://src/TestWorld.tscn"
+run/main_scene="res://src/levels/test_level/TestLevel.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "zylann.scatter" )
+enabled=PoolStringArray( "zylann.hterrain", "zylann.scatter" )
 
 [importer_defaults]
 
@@ -85,6 +97,7 @@ walk={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Enemy"
 3d_physics/layer_4="Enviroment"
+3d_physics/layer_5="Terrain"
 
 [rendering]
 

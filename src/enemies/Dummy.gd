@@ -11,7 +11,7 @@ func _ready():
 	push_state(initial_state)
 
 func on_body_enetered(body):
-	return
+
 	if has_state("FollowState"):
 		return
 	var follow_state = get_state("FollowState")
