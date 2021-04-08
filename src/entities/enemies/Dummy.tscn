@@ -1,9 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/states/KnockbackState.gd" type="Script" id=1]
-[ext_resource path="res://src/enemies/Dummy.gd" type="Script" id=2]
-[ext_resource path="res://src/states/ai_states/IdleState.gd" type="Script" id=3]
-[ext_resource path="res://src/states/ai_states/FollowState.gd" type="Script" id=4]
+[ext_resource path="res://src/states/ai_states/FollowState.gd" type="Script" id=1]
+[ext_resource path="res://src/states/ai_states/IdleState.gd" type="Script" id=2]
+[ext_resource path="res://src/entities/enemies/Dummy.gd" type="Script" id=3]
+[ext_resource path="res://src/states/KnockbackState.gd" type="Script" id=4]
+
+
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -15,7 +17,7 @@ radius = 13.0
 [node name="Dummy" type="KinematicBody"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.5, 0 )
@@ -31,13 +33,13 @@ shape = SubResource( 2 )
 [node name="States" type="Node" parent="."]
 
 [node name="KnockbackState" type="Node" parent="States"]
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 
 [node name="IdleState" type="Node" parent="States"]
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="FollowState" type="Node" parent="States"]
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 max_speed = 50
 
 [node name="Vision" type="Area" parent="."]

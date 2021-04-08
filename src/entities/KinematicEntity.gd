@@ -11,7 +11,7 @@ func _physics_process(delta):
 		state.process_unhandled_input(delta)
 		
 	if not is_on_floor() and not is_on_wall():
-		#velocity.y -= 5.0
+		velocity.y -= 5.0
 		pass
 	velocity.y = move_and_slide_with_snap(velocity, Vector3.DOWN * 32, Vector3.UP, true, 4, deg2rad(46)).y
 

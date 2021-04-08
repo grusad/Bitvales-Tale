@@ -4,7 +4,7 @@
 [ext_resource path="res://src/PlayerCharacter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Camera.gd" type="Script" id=3]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=5]
-[ext_resource path="res://src/enemies/Dummy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/entities/enemies/Dummy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Debug.gd" type="Script" id=7]
 [ext_resource path="res://src/CommandLine.gd" type="Script" id=8]
 [ext_resource path="res://src/entities/world_objects/generics_enviroments/water/Water.tscn" type="PackedScene" id=9]
@@ -33,6 +33,7 @@
 [ext_resource path="res://src/entities/world_objects/props/WoodPile01.tscn" type="PackedScene" id=32]
 [ext_resource path="res://src/entities/world_objects/props/Plank02.tscn" type="PackedScene" id=33]
 [ext_resource path="res://src/entities/world_objects/props/Plank01.tscn" type="PackedScene" id=34]
+
 
 [sub_resource type="ProceduralSky" id=5]
 
