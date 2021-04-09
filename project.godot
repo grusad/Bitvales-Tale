@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "BoneAttachment",
+"class": "AbstractHand",
+"language": "GDScript",
+"path": "res://src/entities/characters/AbstractHand.gd"
+}, {
+"base": "KinematicEntity",
+"class": "AbstractNPC",
+"language": "GDScript",
+"path": "res://src/entities/kinematic_entities/npc/AbstractNPC.gd"
+}, {
+"base": "StaticBody",
+"class": "AbstractStaticEntity",
+"language": "GDScript",
+"path": "res://src/entities/static_entities/AbstractStaticEntity.gd"
+}, {
 "base": "ResourceFormatLoader",
 "class": "HTerrainDataLoader",
 "language": "GDScript",
@@ -22,7 +37,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "KinematicEntity",
 "language": "GDScript",
-"path": "res://src/entities/KinematicEntity.gd"
+"path": "res://src/entities/kinematic_entities/KinematicEntity.gd"
 }, {
 "base": "GridMap",
 "class": "Level",
@@ -45,6 +60,9 @@ _global_script_classes=[ {
 "path": "res://src/states/State.gd"
 } ]
 _global_script_class_icons={
+"AbstractHand": "",
+"AbstractNPC": "",
+"AbstractStaticEntity": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "KinematicEntity": "",
@@ -94,10 +112,11 @@ walk={
 [layer_names]
 
 3d_physics/layer_1="All"
-3d_physics/layer_2="Player"
-3d_physics/layer_3="Enemy"
+3d_physics/layer_2="KinematicEntity"
+3d_physics/layer_3="Player"
 3d_physics/layer_4="Enviroment"
 3d_physics/layer_5="Terrain"
+3d_physics/layer_6="StaticEntity"
 
 [rendering]
 

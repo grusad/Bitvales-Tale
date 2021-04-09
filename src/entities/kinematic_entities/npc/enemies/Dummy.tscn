@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/entities/kinematic_entities/npc/AbstractNPC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/entities/kinematic_entities/npc/AbstractNPC.gd" type="Script" id=2]
+[ext_resource path="res://src/states/ai_states/IdleState.gd" type="Script" id=3]
+[ext_resource path="res://src/states/ai_states/FollowState.gd" type="Script" id=4]
+[ext_resource path="res://src/states/KnockbackState.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="CylinderShape" id=3]
+radius = 10.0
+height = 4.0
+
+[node name="Dummy" instance=ExtResource( 1 )]
+collision_layer = 2147483653
+script = ExtResource( 2 )
+
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Character" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.5, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="IdleState" type="Node" parent="States" index="0"]
+script = ExtResource( 3 )
+
+[node name="FollowState" type="Node" parent="States" index="1"]
+script = ExtResource( 4 )
+
+[node name="KnockbackState" type="Node" parent="States" index="2"]
+script = ExtResource( 5 )
+
+[node name="VisionArea" parent="." index="4"]
+collision_mask = 4
+
+[node name="CollisionShape" parent="VisionArea" index="0"]
+shape = SubResource( 3 )

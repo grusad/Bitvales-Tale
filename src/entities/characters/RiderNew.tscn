@@ -1,13 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/models/characters/rider_new/rider.glb" type="PackedScene" id=1]
 [ext_resource path="res://assets/materials/01_A.material" type="Material" id=2]
+[ext_resource path="res://src/entities/characters/LeftHand.gd" type="Script" id=3]
+[ext_resource path="res://src/entities/characters/RightHand.gd" type="Script" id=4]
 
 [node name="RiderNew" instance=ExtResource( 1 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
 [node name="Root" parent="." index="0"]
-transform = Transform( 0.971712, -0.235977, 0.00952677, -0.0130164, -0.0937895, -0.995507, 0.23581, 0.967222, -0.0942079, -0.0661945, -0.044767, 0 )
+transform = Transform( 0.637629, -0.75975, 0.127314, 0.0409017, -0.131647, -0.990453, 0.769257, 0.636748, -0.0528668, 0.0961474, -0.134168, -0.0294542 )
+
+[node name="Skeleton" parent="Root" index="0"]
+bones/11/bound_children = [ NodePath("LeftHand") ]
+bones/26/bound_children = [ NodePath("RightHand") ]
 
 [node name="SK_Chr_Rider_01" parent="Root/Skeleton" index="0"]
 material/0 = ExtResource( 2 )
+
+[node name="RightHand" type="BoneAttachment" parent="Root/Skeleton" index="1"]
+transform = Transform( 0.835861, 0.203315, -0.5099, -0.190179, 0.978609, 0.0784535, 0.514944, 0.0313955, 0.856648, -0.476175, 0.296312, -0.958841 )
+bone_name = "Hand_R"
+script = ExtResource( 4 )
+
+[node name="LeftHand" type="BoneAttachment" parent="Root/Skeleton" index="2"]
+transform = Transform( 0.835533, 0.512077, 0.199153, -0.291734, 0.720622, -0.628963, -0.465591, 0.467419, 0.751494, 0.533985, 0.154517, -0.866258 )
+bone_name = "Hand_L"
+script = ExtResource( 3 )

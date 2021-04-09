@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var player = get_parent().get_node("PlayerCharacter")
+onready var player = get_parent().get_node("Player")
 onready var ray_cast = $RayCast
 
 func _ready():
@@ -16,10 +16,18 @@ func _process(delta):
 
 func on_entered_ray_cast(objects):
 	for item in objects:
-		if item.has_node("Fadable"):
-			item.get_node("Fadable").fade_out()
+		if item is AbstractStaticEntity:
+			if item.has_attribute("Fadable"):
+				item.get_attribute("Fadable").fade_out()
+			if item.has_attribute("Hideable"):
+				item.get_attribute("Hideable").hide()
+		
 
 func on_exited_ray_cast(objects):
+	
 	for item in objects:
-		if item.has_node("Fadable"):
-			item.get_node("Fadable").fade_in()
+		if item is AbstractStaticEntity:
+			if item.has_attribute("Fadable"):
+					item.get_attribute("Fadable").fade_in()
+			if item.has_attribute("Hideable"):
+				item.get_attribute("Hideable").show()

@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://assets/materials/01_A.material" type="Material" id=1]
-[ext_resource path="res://assets/models/synys/generics/montains/SM_Generic_Mountains_Grass_02.obj" type="ArrayMesh" id=2]
-
-[node name="GrassMountain02" type="MeshInstance"]
-mesh = ExtResource( 2 )
-material/0 = ExtResource( 1 )

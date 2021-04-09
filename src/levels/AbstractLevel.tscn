@@ -1,52 +1,24 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=1]
-[ext_resource path="res://src/PlayerCharacter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Camera.gd" type="Script" id=3]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=5]
-[ext_resource path="res://src/entities/enemies/Dummy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Debug.gd" type="Script" id=7]
 [ext_resource path="res://src/CommandLine.gd" type="Script" id=8]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/water/Water.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/trees/GenericTree01.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/utils/RayCast.tscn" type="PackedScene" id=11]
-[ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=12]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/trees/GenericTree02.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/trees/TreeLarge01.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/trees/TreeLarge02.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster01.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/cliffs/RockCliff04.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster05.tscn" type="PackedScene" id=18]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/cliffs/RockCliff03.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster02.tscn" type="PackedScene" id=20]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/cliffs/RockCliff05.tscn" type="PackedScene" id=21]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/cliffs/RockCliff02.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster03.tscn" type="PackedScene" id=23]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster06.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/bushes/BushCluster04.tscn" type="PackedScene" id=25]
-[ext_resource path="res://src/entities/world_objects/generics_enviroments/cliffs/RockCliff01.tscn" type="PackedScene" id=26]
-[ext_resource path="res://src/entities/world_objects/props/GroundPlanks02.tscn" type="PackedScene" id=27]
-[ext_resource path="res://src/entities/world_objects/props/Plank03.tscn" type="PackedScene" id=28]
-[ext_resource path="res://src/entities/world_objects/props/WoodPile03.tscn" type="PackedScene" id=29]
-[ext_resource path="res://src/entities/world_objects/props/GrounPlanks01.tscn" type="PackedScene" id=30]
-[ext_resource path="res://src/entities/world_objects/props/WoodPile02.tscn" type="PackedScene" id=31]
-[ext_resource path="res://src/entities/world_objects/props/WoodPile01.tscn" type="PackedScene" id=32]
-[ext_resource path="res://src/entities/world_objects/props/Plank02.tscn" type="PackedScene" id=33]
-[ext_resource path="res://src/entities/world_objects/props/Plank01.tscn" type="PackedScene" id=34]
 
-
-[sub_resource type="ProceduralSky" id=5]
+[sub_resource type="ProceduralSky" id=1]
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 5 )
+background_sky = SubResource( 1 )
 fog_color = Color( 0.733333, 0.882353, 1, 1 )
 fog_depth_begin = 50.0
 fog_depth_end = 120.0
 glow_bloom = 0.03
 glow_blend_mode = 1
 
-[sub_resource type="Resource" id=6]
+[sub_resource type="Resource" id=3]
 script = ExtResource( 1 )
 mode = 0
 textures = [ [  ], [  ] ]
@@ -70,9 +42,6 @@ environment = SubResource( 2 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, -0.612373, 0.612373, 0, 0.707107, 0.707107, -0.866025, -0.353553, 0.353553, 0, 11, 0 )
 shadow_enabled = true
-
-[node name="PlayerCharacter" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 10 )
 
 [node name="Debug" type="Control" parent="."]
 anchor_right = 1.0
@@ -143,24 +112,6 @@ text = "MaterialChanges: 0"
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 
-[node name="EnviromentScatter" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-script = ExtResource( 12 )
-_scenes = [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 24 ), ExtResource( 9 ) ]
-min_scale = 0.5
-max_scale = 0.7
-
-[node name="MobScatter" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-script = ExtResource( 12 )
-_scenes = [ ExtResource( 6 ) ]
-
-[node name="BuildingScatter" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-script = ExtResource( 12 )
-_scenes = [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 27 ) ]
-
-[node name="PropScatter" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-script = ExtResource( 12 )
-_scenes = [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 27 ) ]
-
 [node name="HTerrain" type="Spatial" parent="Navigation/NavigationMeshInstance"]
 script = ExtResource( 5 )
 ambient_wind = 0.0
@@ -174,4 +125,4 @@ collision_mask = 0
 shader_type = "LowPoly"
 custom_shader = null
 custom_globalmap_shader = null
-texture_set = SubResource( 6 )
+texture_set = SubResource( 3 )

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/entities/kinematic_entities/AbstractKinematicEntity.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+
+[node name="Test" instance=ExtResource( 1 )]
+collision_layer = 7
+
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource( 1 )

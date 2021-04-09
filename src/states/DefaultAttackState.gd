@@ -12,7 +12,7 @@ func enter_state(parent, previous_state, parameters = {}):
 	movable = true
 
 func exit_state():
-	parent.get_hand().disable_melee_weapon()
+	parent.get_hand_right().disable_melee_weapon()
 	
 func physics_process(delta):
 	current_direction = parent.get_input_direction()
