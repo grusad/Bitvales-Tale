@@ -24,13 +24,13 @@ shape = SubResource( 1 )
 [node name="RiderNew" parent="Character" index="0" instance=ExtResource( 2 )]
 
 [node name="Root" parent="Character/RiderNew" index="0"]
-transform = Transform( 0.73064, -0.680589, -0.0544319, 0.00194779, 0.0818005, -0.996647, 0.68276, 0.728084, 0.0610924, -0.0578334, -0.0580607, 0 )
+transform = Transform( 0.729531, -0.681962, -0.052078, 0.00218502, 0.0784668, -0.996914, 0.683944, 0.727166, 0.0587341, -0.0554298, -0.0598223, 0 )
 
 [node name="RightHand" parent="Character/RiderNew/Root/Skeleton" index="1"]
-transform = Transform( 0.190538, 0.963445, 0.188332, -0.900346, 0.0950466, 0.424668, 0.391244, -0.250479, 0.885544, -0.190997, 0.35306, -1.42164 )
+transform = Transform( 0.818268, 0.167843, -0.549786, -0.544878, 0.5312, -0.648795, 0.18315, 0.830455, 0.526118, -0.416965, 0.0418999, -0.863255 )
 
 [node name="LeftHand" parent="Character/RiderNew/Root/Skeleton" index="2"]
-transform = Transform( 0.478418, 0.48171, 0.734215, -0.518319, 0.82983, -0.206702, -0.708844, -0.281668, 0.646686, 0.597349, 0.576475, -1.38553 )
+transform = Transform( 0.66393, 0.590238, 0.459147, -0.00934613, 0.620503, -0.784148, -0.747736, 0.516328, 0.417487, 0.374602, -0.0677505, -0.853232 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Character" index="1"]
 tree_root = ExtResource( 3 )

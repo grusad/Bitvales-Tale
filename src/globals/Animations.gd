@@ -1,16 +1,27 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+enum Player {
+	IDLE_01,
+	IDLE_02,
+	WALKING,
+	RUNNING,
+	AXE_360,
+	HEAVY_ATTACK_01,
+	HEAVY_ATTACK_02,
+	HEAVY_ATTACK_03
+	HEAVY_ATTACK_JUMP,
+	BOW_DRAW,
+	BOW_IDLE,
+	BOW_AIM_WALK_FORWARD,
+	BOW_AIM_WALK_BACK,
+	BOW_AIM_WALK_LEFT,
+	BOW_AIM_WALK_RIGHT,
+	GREATSWORD_HIGH_ATTACK,
+	GREATSWORD_JUMP_ATTACK,
+	GREATSWORD_SLASH,
+	ROLL_01,
+	SWORD_ATTACK_01,
+	SWORD_ATTACK_02,
+	SWORD_SPIN_ATTACK,
+	ROLL_TO_RUN
+}

@@ -5,12 +5,8 @@ var velocity = Vector3()
 var states = []
 
 func _physics_process(delta):
-	
-	
-	
 	for state in states:
 		state.physics_process(delta)
-		state.process_unhandled_input(delta)
 		
 	if not is_on_floor() and not is_on_wall():
 		velocity.y -= 5.0

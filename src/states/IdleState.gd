@@ -1,9 +1,7 @@
 extends State
 
-
 func enter_state(parent, previous_state, parameters = {}):
 	.enter_state(parent, previous_state, parameters)
-	
 	parent.animation_tree["parameters/state/current"] = 0
 	
 
@@ -14,13 +12,12 @@ func physics_process(delta):
 			transition_to(parent.get_state("WalkState"))	
 		else:
 			transition_to(parent.get_state("RunState"))
-	if Input.is_action_pressed("attack_01"):
-		transition_to(parent.get_state("GreatSwordSlash"))
+			
+	if parent.is_attack_input_pressed():
+		transition_to(parent.get_state("GreatSwordAttack"), {"key_event": latest_attack_event})
+	
 	if Input.is_action_just_pressed("roll"):
 		transition_to(parent.get_state("RollState"))
 	
 	parent.apply_friction(10, delta)
-	
-func process_unhandled_input(event):
-	pass
 

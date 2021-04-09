@@ -5,7 +5,6 @@ export (NodePath) var mesh_instance_path = null
 var mesh_instance = null
 
 func _ready():
-	print(mesh_instance_path)
 	if mesh_instance_path:
 		mesh_instance = get_node_or_null(mesh_instance_path)	
 

@@ -78,6 +78,10 @@ config/name="Unnamed"
 run/main_scene="res://src/levels/test_level/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Animations="*res://src/globals/Animations.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "zylann.hterrain", "zylann.scatter" )
