@@ -14,8 +14,8 @@ func physics_process(delta):
 			transition_to(parent.get_state("WalkState"))	
 		else:
 			transition_to(parent.get_state("RunState"))
-	if Input.is_action_pressed("default_attack"):
-		transition_to(parent.get_state("DefaultAttackState"))
+	if Input.is_action_pressed("attack_01"):
+		transition_to(parent.get_state("GreatSwordSlash"))
 	if Input.is_action_just_pressed("roll"):
 		transition_to(parent.get_state("RollState"))
 	

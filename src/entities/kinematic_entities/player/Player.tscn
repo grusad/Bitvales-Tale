@@ -6,7 +6,7 @@
 [ext_resource path="res://src/entities/kinematic_entities/player/Player.gd" type="Script" id=4]
 [ext_resource path="res://src/states/RollState.gd" type="Script" id=5]
 [ext_resource path="res://src/states/RunState.gd" type="Script" id=6]
-[ext_resource path="res://src/states/DefaultAttackState.gd" type="Script" id=7]
+[ext_resource path="res://src/states/GreatSwordAttack.gd" type="Script" id=7]
 [ext_resource path="res://src/states/IdleState.gd" type="Script" id=8]
 [ext_resource path="res://src/states/WalkState.gd" type="Script" id=9]
 
@@ -24,13 +24,13 @@ shape = SubResource( 1 )
 [node name="RiderNew" parent="Character" index="0" instance=ExtResource( 2 )]
 
 [node name="Root" parent="Character/RiderNew" index="0"]
-transform = Transform( 0.731489, -0.679573, -0.0557205, 0.0013693, 0.083183, -0.996533, 0.681852, 0.728876, 0.0617779, -0.0585973, -0.0570759, 0 )
+transform = Transform( 0.73064, -0.680589, -0.0544319, 0.00194779, 0.0818005, -0.996647, 0.68276, 0.728084, 0.0610924, -0.0578334, -0.0580607, 0 )
 
 [node name="RightHand" parent="Character/RiderNew/Root/Skeleton" index="1"]
-transform = Transform( 0.823539, 0.221762, -0.522115, -0.555092, 0.504652, -0.661209, 0.116855, 0.834354, 0.5387, -0.403884, 0.031279, -0.863894 )
+transform = Transform( 0.190538, 0.963445, 0.188332, -0.900346, 0.0950466, 0.424668, 0.391244, -0.250479, 0.885544, -0.190997, 0.35306, -1.42164 )
 
 [node name="LeftHand" parent="Character/RiderNew/Root/Skeleton" index="2"]
-transform = Transform( 0.720355, 0.516999, 0.462386, 0.0145515, 0.655228, -0.75529, -0.693453, 0.550805, 0.464474, 0.376593, -0.0623404, -0.862149 )
+transform = Transform( 0.478418, 0.48171, 0.734215, -0.518319, 0.82983, -0.206702, -0.708844, -0.281668, 0.646686, 0.597349, 0.576475, -1.38553 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Character" index="1"]
 tree_root = ExtResource( 3 )
@@ -72,7 +72,7 @@ script = ExtResource( 6 )
 [node name="RollState" type="Node" parent="States" index="3"]
 script = ExtResource( 5 )
 
-[node name="DefaultAttackState" type="Node" parent="States" index="4"]
+[node name="GreatSwordAttack" type="Node" parent="States" index="4"]
 script = ExtResource( 7 )
 
 [editable path="Character/RiderNew"]
