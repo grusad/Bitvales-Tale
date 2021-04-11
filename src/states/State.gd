@@ -4,7 +4,6 @@ class_name State
 var parent : KinematicEntity = null
 var previous_state = null
 var parameters = {}
-var latest_attack_event
 
 func enter_state(parent, previous_state, parameters = {}):
 	self.parent = parent
@@ -16,10 +15,7 @@ func exit_state():
 	pass
 
 func process_unhandled_input(event):
-	if (InputMap.event_is_action(event, "attack_01") or InputMap.event_is_action(event, "attack_02")
-		or InputMap.event_is_action(event, "attack_03")):
-			latest_attack_event = event
-			
+	pass
 	
 func physics_process(delta):
 	pass

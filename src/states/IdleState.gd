@@ -13,8 +13,14 @@ func physics_process(delta):
 		else:
 			transition_to(parent.get_state("RunState"))
 			
-	if parent.is_attack_input_pressed():
-		transition_to(parent.get_state("GreatSwordAttack"), {"key_event": latest_attack_event})
+	if Input.is_action_pressed("attack_01"):
+		transition_to(parent.get_state("GreatSwordSlash"))
+	
+	if Input.is_action_pressed("attack_02"):
+		transition_to(parent.get_state("GreatSwordHigh"))
+	
+	if Input.is_action_pressed("attack_03"):
+		transition_to(parent.get_state("GreatSwordJump"))
 	
 	if Input.is_action_just_pressed("roll"):
 		transition_to(parent.get_state("RollState"))

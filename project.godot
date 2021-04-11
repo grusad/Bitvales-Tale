@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/entities/static_entities/AbstractStaticEntity.gd"
 }, {
+"base": "State",
+"class": "AttackState",
+"language": "GDScript",
+"path": "res://src/states/AttackState.gd"
+}, {
+"base": "Node",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://src/effects/Effect.gd"
+}, {
 "base": "ResourceFormatLoader",
 "class": "HTerrainDataLoader",
 "language": "GDScript",
@@ -63,6 +73,8 @@ _global_script_class_icons={
 "AbstractHand": "",
 "AbstractNPC": "",
 "AbstractStaticEntity": "",
+"AttackState": "",
+"Effect": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "KinematicEntity": "",

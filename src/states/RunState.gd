@@ -17,7 +17,7 @@ func physics_process(delta):
 		if Input.is_action_pressed("walk"):
 			transition_to(parent.get_state("WalkState"))
 		if Input.is_action_pressed("attack_01"):
-			transition_to(parent.get_state("GreatSwordAttack"))
+			transition_to(parent.get_state("GreatSwordSlash"))
 		
 		parent.apply_movement(movement_direction, ACCELERATION, WALK_SPEED, delta)
 		parent.look_at(parent.global_transform.origin - movement_direction, Vector3.UP)

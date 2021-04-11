@@ -23,20 +23,6 @@ func get_input_direction():
 		).normalized()
 
 func is_attack_input_pressed():
-	return Input.is_action_pressed("attack_01") || Input.is_action_pressed("attack_02") || Input.is_action_pressed("attack_03")
-	
-func get_animation_index(event):
-	if InputMap.event_is_action(event, "attack_01"):
-		#get wielded weapon type
-		#if type is light
-		return Animations.Player.GREATSWORD_SLASH
-		
-	if InputMap.event_is_action(event, "attack_02"):
-		return Animations.Player.GREATSWORD_HIGH_ATTACK
-		
-	if InputMap.event_is_action(event, "attack_03"):
-		return Animations.Player.GREATSWORD_JUMP_ATTACK
-	
 	
 	
 	
