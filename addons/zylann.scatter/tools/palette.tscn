@@ -16,6 +16,9 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 142.0
@@ -32,11 +35,29 @@ margin_right = 117.0
 margin_bottom = 20.0
 text = "Remove"
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 24.0
+margin_right = 142.0
+margin_bottom = 48.0
+
+[node name="Filter" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 37.0
+margin_bottom = 19.0
+text = "Filter:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 41.0
+margin_right = 142.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+margin_top = 52.0
 margin_right = 142.0
 margin_bottom = 592.0
 size_flags_vertical = 3
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/AddButton" to="." method="_on_AddButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RemoveButton" to="." method="_on_RemoveButton_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer2/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="item_selected" from="VBoxContainer/ItemList" to="." method="_on_ItemList_item_selected"]

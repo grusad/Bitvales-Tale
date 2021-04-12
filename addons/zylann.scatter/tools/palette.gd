@@ -125,3 +125,4 @@ func _on_FileDialog_file_selected(fpath):
 	emit_signal("pattern_added", fpath)
 
 
+

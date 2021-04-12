@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/items/weapons/melee_weapons/IronSword.tscn" type="PackedScene" id=2]
+
+[node name="Scatter" type="Spatial"]
+
+[node name="Items" type="Spatial" parent="."]
+script = ExtResource( 1 )
+_scenes = [ ExtResource( 2 ) ]
